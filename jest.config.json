@@ -1,0 +1,26 @@
+{
+  "preset": "jest-expo",
+  "setupFilesAfterEnv": ["@testing-library/jest-native/extend-expect"],
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "App.tsx",
+    "src/**/*.{tsx,ts,js,jsx}",
+    "!**/node_modules/**",
+    "!**/vendor/**",
+    "!**/ios/**",
+    "!**/android/**",
+    "!**/env/**",
+    "!**/jestMocks/**"
+  ],
+  "coverageThreshold": {
+    "global": {
+      "branches": 100,
+      "functions": 100,
+      "lines": 100,
+      "statements": 100
+    }
+  },
+  "transformIgnorePatterns": [
+    "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg)"
+  ]
+}
