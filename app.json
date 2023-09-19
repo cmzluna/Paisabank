@@ -2,6 +2,7 @@
   "expo": {
     "name": "Paisabank",
     "slug": "Paisabank",
+    "scheme": "paisabank",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -26,6 +27,7 @@
     },
     "experiments": {
       "tsconfigPaths": true
-    }
+    },
+    "plugins": ["expo-router"]
   }
 }
