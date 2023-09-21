@@ -9,6 +9,8 @@ import Header from "../../../components/Header";
 import { Container, SafeAreaContainer } from "./styles";
 import ActionsTabs from "../../../components/ActionsTabs";
 import SectionTitle from "../../../components/SectionTitle";
+import MastercardIcon from "../../../../assets/icons/issuers/mastercard.svg";
+import VisaIcon from "../../../../assets/icons/issuers/visa.svg";
 
 const cardsList = [
   {
@@ -105,12 +107,27 @@ const mappedTransactionsArray = transactionsArray.map((el) => {
   return { ...el, transactionTypeLabel, svgFile, color };
 });
 
+const mappedCardsListArray = cardsList.map((el) => {
+  let svgFile = null;
+
+  switch (el.issuer) {
+    case "mastercard":
+      svgFile = MastercardIcon;
+      break;
+    case "visa":
+      svgFile = VisaIcon;
+      break;
+  }
+
+  return { ...el, svgFile };
+});
+
 export default function Home(): React.JSX.Element {
   return (
     <SafeAreaContainer>
       <Container>
         <Header />
-        <CardsList data={cardsList} />
+        <CardsList data={mappedCardsListArray} />
 
         <TransactionsList
           data={mappedTransactionsArray}
