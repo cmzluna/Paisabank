@@ -6,6 +6,8 @@ import { signOut } from "../../store/slices/user";
 import HomeIcon from "../../../assets/icons/home.svg";
 import DocumentIcon from "../../../assets/icons/document.svg";
 import LogoutIcon from "../../../assets/icons/logout.svg";
+import ArrowBack from "../../../assets/icons/arrow-back.svg";
+import { BackButton } from "./styles";
 
 export default function AppLayout(): React.JSX.Element {
   const { user, isLoading } = useSelector((state: RootState) => state.user);
@@ -18,6 +20,10 @@ export default function AppLayout(): React.JSX.Element {
   if (!user) {
     return <Redirect href="/login" />;
   }
+
+  const callback = (): void => {
+    console.log("ACA !");
+  };
 
   return (
     <Tabs
@@ -45,8 +51,14 @@ export default function AppLayout(): React.JSX.Element {
       <Tabs.Screen
         name="contacts/index"
         options={{
+          title: "Contactos",
           headerShown: true,
           href: "/contacts",
+          headerLeft: () => (
+            <BackButton href="/home">
+              <ArrowBack />
+            </BackButton>
+          ),
           tabBarIcon: ({ color }) => (
             <View>
               <DocumentIcon color={color} width={27} height={30} />

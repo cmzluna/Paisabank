@@ -27,7 +27,7 @@ const Wrapper = styled.View`
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  border: 1px solid blue;
+  margin: ${verticalScale(8)}px 0 ${verticalScale(8)}px 0;
 `;
 
 const ExtendedWrapper = styled.View`
@@ -50,28 +50,44 @@ const InnerWrapper = styled.View`
   align-items: center;
 `;
 
-const ItemTitle = styled.Text`
+const Chip = styled.View`
+  width: 48px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-right: ${horizontalScale(10)}px;
+`;
+
+const WhiteText = styled.Text`
+  color: #fff;
+`;
+
+const ItemTitle = styled(WhiteText)`
   ${fontSize.xxsmall};
   text-align: center;
   font-weight: bold;
 `;
 
-const XxsmallText = styled.Text`
+const XxsmallText = styled(WhiteText)`
   ${fontSize.xxsmall};
 `;
-const SmallText = styled.Text`
+const SmallText = styled(WhiteText)`
   ${fontSize.small};
 `;
-const MediumText = styled.Text`
+const MediumText = styled(WhiteText)`
   ${fontSize.medium};
 `;
 
-const LargeText = styled.Text`
+const LargeText = styled(WhiteText)`
   ${fontSize.large};
 `;
 
-const XxlargeText = styled.Text`
+const XxlargeText = styled(WhiteText)`
   ${fontSize.xxlarge};
+`;
+
+const PositionedText = styled(MediumText)`
+  position: absolute;
 `;
 
 const Button = styled(BaseButton)`
@@ -99,4 +115,6 @@ export {
   SmallText,
   LargeText,
   XxlargeText,
+  Chip,
+  PositionedText,
 };

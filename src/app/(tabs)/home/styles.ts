@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import BaseButton from "../../../components/BaseButton";
 
 const Container = styled.View`
   width: 100%;

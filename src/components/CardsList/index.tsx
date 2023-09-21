@@ -4,7 +4,7 @@ import {
   Wrapper,
   ExtendedWrapper,
   ItemContainer,
-  InnerWrapper,
+  Chip,
   ItemTitle,
   ColumnWrapper,
   MediumText,
@@ -12,16 +12,17 @@ import {
   SmallText,
   LargeText,
   XxlargeText,
+  PositionedText,
 } from "./styles";
 import { FlatList, Text, type ViewToken } from "react-native";
-import type { Card } from "../../types";
-
+import type { Card, ParsedCard } from "../../types";
+import GradientChip from "../../../assets/gradient-chip.svg";
 interface ItemProps {
-  item: Card;
+  item: ParsedCard;
 }
 
 interface CardsListProps {
-  data: Card[];
+  data: ParsedCard[];
 }
 
 /*
@@ -42,16 +43,20 @@ const CardsList = ({ data }: CardsListProps): JSX.Element | null => {
 
   const Item = ({ item }: ItemProps): JSX.Element => {
     //  const isOnTop = focusedItem === item.id;
-
+    const SvgComp = item.svgFile;
     return (
-      <ItemContainer backgroundColor={"#F9B7B7"}>
+      <ItemContainer backgroundColor={"#005CEE"}>
         <ExtendedWrapper>
           <MediumText>Balance</MediumText>
-          <ItemTitle>img</ItemTitle>
+          <SvgComp />
         </ExtendedWrapper>
 
         <Wrapper>
-          <MediumText>{item.currency}</MediumText>
+          <Chip>
+            <GradientChip />
+            <PositionedText>{item.currency}</PositionedText>
+          </Chip>
+
           <XxlargeText>{item.balance}</XxlargeText>
         </Wrapper>
 

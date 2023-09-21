@@ -19,6 +19,10 @@ export interface Card {
   currency: string;
 }
 
+export interface ParsedCard extends Card {
+  svgFile: FC<SvgProps>;
+}
+
 export interface Transaction {
   id: number;
   title: string;
