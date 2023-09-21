@@ -14,6 +14,7 @@ import {
   SubTitle,
   Button,
   InputComponent,
+  ButtonText,
 } from "./styles";
 
 export default function Login(): React.JSX.Element {
@@ -47,7 +48,9 @@ export default function Login(): React.JSX.Element {
 
         <BottomWrapper>
           <SubTitle>No tienes cuenta? Regístrate</SubTitle>
-          <Button title="Ingresar" fontSize={16} onPress={login} />
+          <Button fontSize={16} onPress={login}>
+            <ButtonText>Ingresar</ButtonText>
+          </Button>
         </BottomWrapper>
       </Container>
     </ScrollView>

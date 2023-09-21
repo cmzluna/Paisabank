@@ -1,24 +1,21 @@
-import React from 'react';
-import {TouchableOpacity} from 'react-native';
-import {TextComp} from './styles';
+import React from "react";
+import { TouchableOpacity } from "react-native";
 
 interface BaseButtonProps {
-  title: string;
   fontSize?: number;
-  onPress: () => void;
+  onPress?: () => void;
+  children?: JSX.Element;
 }
 
 const BaseButton = ({
-  title,
   fontSize,
   onPress,
+  children,
   ...props
 }: BaseButtonProps): JSX.Element | null => {
-  if (!title) return null;
-
   return (
-    <TouchableOpacity activeOpacity={0.85} onPress={onPress} {...props}>
-      <TextComp fontSize={fontSize}>{title}</TextComp>
+    <TouchableOpacity activeOpacity={0.45} onPress={onPress} {...props}>
+      {children}
     </TouchableOpacity>
   );
 };
