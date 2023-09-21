@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 import { getScale } from "../../utils";
 import BaseButton from "../../components/BaseButton";
+import { fontSize } from "../../theme/typography";
 
 const { horizontalScale, verticalScale } = getScale();
 
@@ -35,19 +36,23 @@ const BottomWrapper = styled.View`
 `;
 
 const Title = styled.Text`
-  font-size: ${verticalScale(40)}px;
+  ${fontSize.xxxlarge};
   color: #005cee;
 `;
 
 const SubTitle = styled.Text`
-  font-size: ${verticalScale(16)}px;
+  ${fontSize.large};
   color: #717e95;
 `;
 
+const ButtonText = styled.Text`
+  ${fontSize.large};
+  color: #fff;
+`;
+
 const InputText = styled.Text`
-  font-size: ${verticalScale(16)}px;
+  ${fontSize.large};
   color: #334154;
-  font-size: 16px;
   font-weight: 500;
   margin-top: ${verticalScale(24)}px;
   margin-bottom: ${verticalScale(16)}px;
@@ -79,4 +84,5 @@ export {
   MiddleWrapper,
   BottomWrapper,
   InputComponent,
+  ButtonText,
 };

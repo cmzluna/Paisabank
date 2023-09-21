@@ -1,6 +1,7 @@
 import { Slot } from "expo-router";
 import { Provider } from "react-redux";
 import store from "../store";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import AppLoading from "expo-app-loading";
 import {
   useFonts,
@@ -54,7 +55,9 @@ export default function Root(): React.JSX.Element {
 
   return (
     <Provider store={store}>
-      <Slot />
+      <SafeAreaProvider>
+        <Slot />
+      </SafeAreaProvider>
     </Provider>
   );
 }
