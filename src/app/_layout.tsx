@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import store from "../store";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import AppLoading from "expo-app-loading";
+import Toast from "react-native-toast-message";
 import {
   useFonts,
   Poppins_100Thin,
@@ -57,6 +58,7 @@ export default function Root(): React.JSX.Element {
     <Provider store={store}>
       <SafeAreaProvider>
         <Slot />
+        <Toast />
       </SafeAreaProvider>
     </Provider>
   );

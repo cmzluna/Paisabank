@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { Dimensions } from "react-native";
+import Toast from "react-native-toast-message";
 
 export const getScale = () => {
   const { width, height } = Dimensions.get("screen");
@@ -31,4 +32,14 @@ export const filterArrayByPersonalData = (array, string) => {
   return array.filter((item) =>
     (item.name + item.lastName + item.phone).toLowerCase().includes(formattedStr),
   );
+};
+
+export const showToast = (message, type = "success", position = "top") => {
+  Toast.show({
+    type,
+    text1: message,
+    bottomOffset: 20,
+    position,
+    visibilityTime: 3000,
+  });
 };
