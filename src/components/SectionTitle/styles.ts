@@ -2,17 +2,31 @@ import styled from "styled-components/native";
 import { fontSize } from "../../theme/typography";
 import { getScale } from "../../utils";
 
-const { verticalScale } = getScale();
+const { verticalScale, horizontalScale } = getScale();
 
-const Container = styled.View`
-  flex-direction: row;
-  margin: ${verticalScale(22)}px 0 ${verticalScale(22)}px 0;
+interface ContainerProps {
+  contained: boolean;
+}
+
+const Container = styled.View<ContainerProps>`
+  margin: ${({ contained }) =>
+    contained
+      ? `${verticalScale(22)}px 0px ${verticalScale(22)}px 0px`
+      : `${verticalScale(22)}px 0px ${verticalScale(22)}px ${horizontalScale(22)}px`};
 `;
 
 const Title = styled.Text`
-  color: #616e7c;
+  color: #aaa;
   ${fontSize.xlarge};
   font-weight: 500;
 `;
 
-export { Container, Title };
+const Divider = styled.View`
+  width: 100%;
+  height: 1px;
+  margin-bottom: ${verticalScale(24)}px;
+  border-bottom-width: 1px;
+  border-color: #acbac3;
+`;
+
+export { Container, Title, Divider };

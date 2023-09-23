@@ -1,5 +1,4 @@
 /* eslint-disable react-native/no-inline-styles */
-import { ScrollView, View } from "react-native";
 import CardsList from "../../../components/CardsList";
 import TransactionsList from "../../../components/TransactionsList";
 import SuscriptionIcon from "../../../../assets/icons/arrows-up-down.svg";
@@ -134,9 +133,9 @@ export default function Home(): React.JSX.Element {
           showsVerticalScrollIndicator={false}
           ListHeaderComponent={
             <>
-              <SectionTitle title={"Servicios"} />
+              <SectionTitle title={"Servicios"} contained />
               <ActionsTabs />
-              <SectionTitle title={"Últimas transacciones"} />
+              <SectionTitle title={"Últimas transacciones"} contained />
             </>
           }
         />
