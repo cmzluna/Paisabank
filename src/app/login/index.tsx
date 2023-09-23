@@ -34,7 +34,8 @@ export default function Login(): React.JSX.Element {
 
     dispatch(
       signIn({
-        name: userEmail,
+        name: result?.data.name,
+        email: userEmail,
       }),
     );
     // Navigates to Home screen after signing in

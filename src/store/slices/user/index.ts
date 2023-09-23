@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export interface User {
   name: string;
+  email: string;
 }
 
 interface AuthType {
@@ -20,7 +21,7 @@ export const userSlice = createSlice({
   reducers: {
     signIn: (prevState, { payload }) => {
       return {
-        user: { name: payload.name },
+        user: { name: payload.name, email: payload.email },
         isLoading: false,
       };
     },

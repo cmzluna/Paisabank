@@ -1,9 +1,11 @@
 import { Slot } from "expo-router";
 import { Provider } from "react-redux";
-import store from "../store";
+import store, { persistor } from "../store";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import AppLoading from "expo-app-loading";
 import Toast from "react-native-toast-message";
+import { PersistGate } from "redux-persist/integration/react";
+
 import {
   useFonts,
   Poppins_100Thin,
@@ -56,10 +58,12 @@ export default function Root(): React.JSX.Element {
 
   return (
     <Provider store={store}>
-      <SafeAreaProvider>
-        <Slot />
-        <Toast />
-      </SafeAreaProvider>
+      <PersistGate loading={null} persistor={persistor}>
+        <SafeAreaProvider>
+          <Slot />
+          <Toast />
+        </SafeAreaProvider>
+      </PersistGate>
     </Provider>
   );
 }
