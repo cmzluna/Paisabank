@@ -21,10 +21,6 @@ export default function AppLayout(): React.JSX.Element {
     return <Redirect href="/login" />;
   }
 
-  const callback = (): void => {
-    console.log("ACA !");
-  };
-
   return (
     <Tabs
       initialRouteName="contacts/index"
@@ -54,11 +50,11 @@ export default function AppLayout(): React.JSX.Element {
           title: "Contactos",
           headerShown: true,
           href: "/contacts",
-          headerLeft: () => (
-            <BackButton href="/home">
-              <ArrowBack />
-            </BackButton>
-          ),
+          // headerLeft: () => (
+          //   <BackButton href="/home">
+          //     <ArrowBack />
+          //   </BackButton>
+          // ),
           tabBarIcon: ({ color }) => (
             <View>
               <DocumentIcon color={color} width={27} height={30} />

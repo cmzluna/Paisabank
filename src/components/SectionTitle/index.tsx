@@ -1,17 +1,23 @@
 import React from "react";
-import { Container, Title } from "./styles";
+import { Container, Title, Divider } from "./styles";
 
 interface SectionTitleProps {
   title: string;
+  contained?: boolean;
+  showDivider?: boolean;
 }
 
-const SectionTitle = ({ title, ...props }: SectionTitleProps): JSX.Element | null => {
+const SectionTitle = ({ title, showDivider, ...props }: SectionTitleProps): JSX.Element | null => {
   if (!title) return null;
 
   return (
-    <Container {...props}>
-      <Title>{title}</Title>
-    </Container>
+    <>
+      <Container {...props}>
+        <Title>{title}</Title>
+      </Container>
+
+      {showDivider && <Divider />}
+    </>
   );
 };
 

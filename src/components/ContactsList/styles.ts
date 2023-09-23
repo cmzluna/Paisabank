@@ -3,19 +3,19 @@ import BaseButton from "../BaseButton";
 import { getScale } from "../../utils";
 import { fontSize } from "../../theme/typography";
 
-const { horizontalScale } = getScale();
+const { horizontalScale, verticalScale } = getScale();
 
 const Container = styled.View`
   flex: 1;
-  margin: 0 ${horizontalScale(24)}px;
 `;
 
 const ItemContainer = styled.TouchableOpacity`
-  flex: 1;
   flex-direction: row;
+  margin: 0 20px 0 20px;
   border-radius: 14px;
   background-color: #fff;
   padding: 20px;
+  height: ${verticalScale(92)}px;
   margin-bottom: ${horizontalScale(26)}px;
   justify-content: space-between;
   align-items: center;
@@ -27,8 +27,6 @@ const Wrapper = styled.View`
   align-items: center;
   border: 1px solid blue;
 `;
-
-const ExtendedWrapper = styled.View``;
 
 const ColumnWrapper = styled.View`
   flex: 1;
@@ -93,7 +91,6 @@ export {
   Container,
   ItemContainer,
   Wrapper,
-  ExtendedWrapper,
   ItemTitle,
   InnerWrapper,
   Button,
