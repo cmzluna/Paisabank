@@ -1,11 +1,10 @@
-import React, { useCallback, useState, useRef } from "react";
+import React, { useCallback, useState } from "react";
 import {
   Container,
   Wrapper,
   ExtendedWrapper,
   ItemContainer,
   Chip,
-  ItemTitle,
   ColumnWrapper,
   MediumText,
   XxsmallText,
@@ -14,7 +13,7 @@ import {
   XxlargeText,
   PositionedText,
 } from "./styles";
-import { FlatList, Text, type ViewToken } from "react-native";
+import { FlatList, type ViewToken } from "react-native";
 import type { Card, ParsedCard } from "../../types";
 import GradientChip from "../../../assets/gradient-chip.svg";
 interface ItemProps {
