@@ -39,7 +39,7 @@ export default function Login(): React.JSX.Element {
       }),
     );
     // Navigates to Home screen after signing in
-    router.replace("/home");
+    router.replace("/");
   };
 
   return (

@@ -23,7 +23,7 @@ export default function AppLayout(): React.JSX.Element {
 
   return (
     <Tabs
-      initialRouteName="home/index"
+      initialRouteName="index"
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
@@ -32,11 +32,11 @@ export default function AppLayout(): React.JSX.Element {
       }}
     >
       <Tabs.Screen
-        name="home/index"
+        name="index"
         options={{
           title: "Home",
           headerShown: false,
-          href: "/home",
+          href: "/",
           tabBarIcon: ({ color }) => (
             <View>
               <HomeIcon color={color} width={27} height={28.5} />
@@ -63,7 +63,7 @@ export default function AppLayout(): React.JSX.Element {
         }}
       />
       <Tabs.Screen
-        name="logout"
+        name="logout/index"
         options={{
           title: "Logout",
           headerShown: true,
