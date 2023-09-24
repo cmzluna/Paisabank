@@ -2,7 +2,8 @@
 import { ScrollView } from "react-native";
 import { router } from "expo-router";
 import { useDispatch } from "react-redux";
-import { signIn } from "../../store/slices/user";
+import { setUser } from "../../store/slices/user";
+import { signIn } from "../../store/slices/auth";
 import Logo from "../../../assets/logo.svg";
 import {
   Container,
@@ -18,11 +19,13 @@ import {
 } from "./styles";
 import userLogin from "../../services/userLogin";
 import { useState } from "react";
+import CheckBox from "react-native-check-box";
 
 export default function Login(): React.JSX.Element {
   const dispatch = useDispatch();
-  const [userEmail, setUserEmail] = useState<string>("");
-  const [userPassword, setUserPassword] = useState<string>("");
+  const [userEmail, setUserEmail] = useState<string>("soypaisanx@paisanos.io");
+  const [userPassword, setUserPassword] = useState<string>("PAISANX2023!$");
+  const [rememberMe, setRememberMe] = useState<boolean>(false);
 
   const handleLogin = async (): Promise<void> => {
     const result = await userLogin({
@@ -33,11 +36,20 @@ export default function Login(): React.JSX.Element {
     if (result?.success) console.log("IN");
 
     dispatch(
-      signIn({
+      setUser({
         name: result?.data.name,
         email: userEmail,
+        rememberMe,
+        isLogging: true,
       }),
     );
+
+    dispatch(signIn({}));
+
+    // if (rememberMe) {
+    //   await AsyncStorage.setItem("rememberMe", "true");
+    // }
+
     // Navigates to Home screen after signing in
     router.replace("/");
   };
@@ -63,6 +75,14 @@ export default function Login(): React.JSX.Element {
             placeholder="Ingresa tu contraseña"
             onChangeText={setUserPassword}
             value={userPassword}
+          />
+          <CheckBox
+            style={{ flex: 1, padding: 10 }}
+            onClick={() => {
+              setRememberMe(!rememberMe);
+            }}
+            isChecked={rememberMe}
+            leftText={"Remember Me"}
           />
         </MiddleWrapper>
 

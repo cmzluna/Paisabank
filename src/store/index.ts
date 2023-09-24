@@ -1,5 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import userReducer from "./slices/user";
+import authReducer from "./slices/auth";
 import {
   persistStore,
   persistReducer,
@@ -11,20 +12,36 @@ import {
   REGISTER,
 } from "redux-persist";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import autoMergeLevel2 from "redux-persist/lib/stateReconciler/autoMergeLevel2";
 import logger from "redux-logger";
 
-const persistConfig = {
+const rootPersistConfig = {
   key: "root",
-  version: 1,
   storage: AsyncStorage,
+  blacklist: ["auth"],
+  stateReconciler: autoMergeLevel2,
+};
+
+const authPersistConfig = {
+  key: "auth",
+  storage: AsyncStorage,
+  blacklist: ["isLogging"],
+  stateReconciler: autoMergeLevel2,
+};
+
+const userPersistConfig = {
+  key: "user",
+  storage: AsyncStorage,
+  stateReconciler: autoMergeLevel2,
 };
 
 const rootReducer = combineReducers({
-  user: userReducer,
+  auth: persistReducer(authPersistConfig, authReducer),
+  user: persistReducer(userPersistConfig, userReducer),
   // transactions: transactionsReducer,
 });
 
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const persistedReducer = persistReducer(rootPersistConfig, rootReducer);
 
 export const store = configureStore({
   reducer: persistedReducer,
