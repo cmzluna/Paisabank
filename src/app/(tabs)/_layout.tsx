@@ -1,8 +1,8 @@
-import { Redirect, Tabs } from "expo-router";
+import { Redirect, Tabs, router } from "expo-router";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../../store";
 import { Text, View } from "react-native";
-import { signOut } from "../../store/slices/user";
+import { deleteUser } from "../../store/slices/user";
 import HomeIcon from "../../../assets/icons/home.svg";
 import DocumentIcon from "../../../assets/icons/document.svg";
 import LogoutIcon from "../../../assets/icons/logout.svg";
@@ -10,16 +10,46 @@ import ArrowBack from "../../../assets/icons/arrow-back.svg";
 import { BackButton } from "./styles";
 
 export default function AppLayout(): React.JSX.Element {
-  const { user, isLoading } = useSelector((state: RootState) => state.user);
+  const { user, isLoading, rememberMe } = useSelector((state: RootState) => state.user);
+  const { isLogging } = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch();
 
   if (isLoading) {
     return <Text>Loading...</Text>;
   }
 
-  if (!user) {
+  if (!rememberMe) {
+    console.log("rememberMe is => ", rememberMe);
+    console.log("isLogging is => ", isLogging);
+    console.log("user is => ", user);
+    //  return router.replace("/login");
+  }
+
+  if (!isLogging && !rememberMe) {
+    console.log(" in REMEMBER ");
     return <Redirect href="/login" />;
   }
+
+  // router.replace("/login");
+  /*
+
+viene de afuera c remember: 0
+1 && 0  = 0 
+
+viene de afuera s remember: 1
+0 0 = 1 entra en login 
+
+desde login c remember 0 
+0 && = 0 
+
+desde login s remember 0 
+0 
+
+*/
+
+  // if (!rememberMe) {
+  //   return <Redirect href="/login" />;
+  // }
 
   return (
     <Tabs
@@ -76,7 +106,8 @@ export default function AppLayout(): React.JSX.Element {
         listeners={() => ({
           tabPress: (e) => {
             e.preventDefault();
-            dispatch(signOut({}));
+            dispatch(deleteUser({}));
+            router.replace("/login");
           },
         })}
       />

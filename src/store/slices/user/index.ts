@@ -8,29 +8,32 @@ export interface User {
 interface AuthType {
   user: User | null;
   isLoading: boolean;
+  rememberMe: boolean;
 }
 
 const initialState: AuthType = {
   user: null,
   isLoading: false,
+  rememberMe: false,
 };
 
 export const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    signIn: (prevState, { payload }) => {
+    setUser: (prevState, { payload }) => {
       return {
         user: { name: payload.name, email: payload.email },
         isLoading: false,
+        rememberMe: payload.rememberMe,
       };
     },
-    signOut: (prevState, action) => {
-      return { user: null, isLoading: false };
+    deleteUser: (prevState, action) => {
+      return { user: null, isLoading: false, rememberMe: false };
     },
   },
 });
 
-export const { signIn, signOut } = userSlice.actions;
+export const { setUser, deleteUser } = userSlice.actions;
 
 export default userSlice.reducer;
