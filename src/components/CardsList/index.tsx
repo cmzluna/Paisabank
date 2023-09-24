@@ -16,12 +16,16 @@ import {
 import { FlatList, type ViewToken } from "react-native";
 import type { Card, ParsedCard } from "../../types";
 import GradientChip from "../../../assets/gradient-chip.svg";
+import { ActivityIndicator, StyleSheet, View } from "react-native";
+import LoadingIndicator from "../LoadingIndicator";
+
 interface ItemProps {
   item: ParsedCard;
 }
 
 interface CardsListProps {
   data: ParsedCard[];
+  isLoading: boolean;
 }
 
 /*
@@ -37,7 +41,7 @@ interface CardsListProps {
 
 */
 
-const CardsList = ({ data }: CardsListProps): JSX.Element | null => {
+const CardsList = ({ data, isLoading }: CardsListProps): JSX.Element | null => {
   const [focusedItem, setFocusedItem] = useState<number | null>(null);
 
   const Item = ({ item }: ItemProps): JSX.Element => {
@@ -96,6 +100,8 @@ const CardsList = ({ data }: CardsListProps): JSX.Element | null => {
   const viewConfigRef = React.useRef({
     itemVisiblePercentThreshold: 70,
   });
+
+  if (isLoading) return <LoadingIndicator />;
 
   // try with  viewAreaCoveragePercentThreshold: 50,
   return (

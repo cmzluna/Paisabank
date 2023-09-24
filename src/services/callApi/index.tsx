@@ -11,6 +11,7 @@ export default async function callApi(
 ): Promise<any> {
   const axiosInstance = axios.create({
     baseURL: API_BASE_URL,
+    url,
     method,
     headers: {
       "x-api-key": API_KEY,
@@ -18,7 +19,7 @@ export default async function callApi(
   });
 
   try {
-    const { data } = await axiosInstance.post(url, dataRequest);
+    const { data } = await axiosInstance(url, dataRequest);
 
     return data;
   } catch (error) {

@@ -9,6 +9,7 @@ import {
 } from "./styles";
 import { FlatList } from "react-native";
 import type { ParsedTransaction } from "../../types";
+import LoadingIndicator from "../LoadingIndicator";
 
 interface ItemProps {
   item: ParsedTransaction;
@@ -16,9 +17,14 @@ interface ItemProps {
 
 interface TransactionsListProps {
   data: ParsedTransaction[];
+  isLoading: boolean;
 }
 
-const TransactionsList = ({ data, ...props }: TransactionsListProps): JSX.Element | null => {
+const TransactionsList = ({
+  data,
+  isLoading,
+  ...props
+}: TransactionsListProps): JSX.Element | null => {
   const Item = ({ item }: ItemProps): JSX.Element => {
     const SvgComp = item.svgFile;
 
@@ -39,6 +45,8 @@ const TransactionsList = ({ data, ...props }: TransactionsListProps): JSX.Elemen
   const renderItem = ({ item }: { item: ParsedTransaction }): JSX.Element => {
     return <Item item={item} />;
   };
+
+  if (isLoading) return <LoadingIndicator />;
 
   return (
     <Container>
