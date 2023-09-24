@@ -1,15 +1,18 @@
 /* eslint-disable react-native/no-inline-styles */
 import CardsList from "../../components/CardsList";
 import TransactionsList from "../../components/TransactionsList";
-import SuscriptionIcon from "../../../assets/icons/arrows-up-down.svg";
-import CashInIcon from "../../../assets/icons/arrow-down-bold.svg";
-import CashOutIcon from "../../../assets/icons/arrow-up-bold.svg";
+
 import MastercardIcon from "../../../assets/icons/issuers/mastercard.svg";
 import VisaIcon from "../../../assets/icons/issuers/visa.svg";
 import Header from "../../components/Header";
 import { Container, SafeAreaContainer } from "./styles";
 import ActionsTabs from "../../components/ActionsTabs";
 import SectionTitle from "../../components/SectionTitle";
+import useCallApi from "../../hooks/useCallApi";
+import getUserCards from "../../services/getUserCards";
+import { ActivityIndicator, StyleSheet, View } from "react-native";
+import { mapCardsArray, mapTransactionsArray } from "../../utils";
+import getUserTransactions from "../../services/getUserTransactions";
 
 const cardsList = [
   {
@@ -77,34 +80,34 @@ const transactionsArray = [
   },
 ];
 
-const mappedTransactionsArray = transactionsArray.map((el) => {
-  let transactionTypeLabel = "";
-  let svgFile = null;
-  let color = "";
+// const mappedTransactionsArray = transactionsArray.map((el) => {
+//   let transactionTypeLabel = "";
+//   let svgFile = null;
+//   let color = "";
 
-  switch (el.transactionType) {
-    case "SUS":
-      transactionTypeLabel = "Pago de suscripción";
-      svgFile = SuscriptionIcon;
-      color = "#B946FF";
-      break;
-    case "CASH_IN":
-      transactionTypeLabel = "Pago recibido";
-      svgFile = CashInIcon;
-      color = "#74CC9B";
-      break;
-    case "CASH_OUT":
-      transactionTypeLabel = "Pago enviado";
-      svgFile = CashOutIcon;
-      color = "#EF9C55";
-      break;
-    // default:
-    //   transactionTypeLabel = "Otro"; // Default label for unknown types
-    //   svgFile = SuscriptionIcon;
-  }
+//   switch (el.transactionType) {
+//     case "SUS":
+//       transactionTypeLabel = "Pago de suscripción";
+//       svgFile = SuscriptionIcon;
+//       color = "#B946FF";
+//       break;
+//     case "CASH_IN":
+//       transactionTypeLabel = "Pago recibido";
+//       svgFile = CashInIcon;
+//       color = "#74CC9B";
+//       break;
+//     case "CASH_OUT":
+//       transactionTypeLabel = "Pago enviado";
+//       svgFile = CashOutIcon;
+//       color = "#EF9C55";
+//       break;
+//     // default:
+//     //   transactionTypeLabel = "Otro"; // Default label for unknown types
+//     //   svgFile = SuscriptionIcon;
+//   }
 
-  return { ...el, transactionTypeLabel, svgFile, color };
-});
+//   return { ...el, transactionTypeLabel, svgFile, color };
+// });
 
 const mappedCardsListArray = cardsList.map((el) => {
   let svgFile = null;
@@ -122,15 +125,24 @@ const mappedCardsListArray = cardsList.map((el) => {
 });
 
 export default function Home(): React.JSX.Element {
+  const { isLoading: isLoadingCards, data: cardsData } = useCallApi(getUserCards, mapCardsArray);
+  const { isLoading: isLoadingTransactions, data: transactionsData } = useCallApi(
+    getUserTransactions,
+    mapTransactionsArray,
+  );
+
+  console.log("transactionsData  = ", transactionsData);
+
   return (
     <SafeAreaContainer>
       <Container>
         <Header />
-        <CardsList data={mappedCardsListArray} />
+        <CardsList data={cardsData} isLoading={isLoadingCards} />
 
         <TransactionsList
-          data={mappedTransactionsArray}
+          data={transactionsData}
           showsVerticalScrollIndicator={false}
+          isLoading={isLoadingTransactions}
           ListHeaderComponent={
             <>
               <SectionTitle title={"Servicios"} contained />
