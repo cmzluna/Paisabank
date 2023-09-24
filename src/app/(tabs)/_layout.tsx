@@ -10,46 +10,13 @@ import ArrowBack from "../../../assets/icons/arrow-back.svg";
 import { BackButton } from "./styles";
 
 export default function AppLayout(): React.JSX.Element {
-  const { user, isLoading, rememberMe } = useSelector((state: RootState) => state.user);
+  const { isLoading, rememberMe } = useSelector((state: RootState) => state.user);
   const { isLogging } = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch();
 
-  if (isLoading) {
-    return <Text>Loading...</Text>;
-  }
+  if (isLoading) return <Text>Loading...</Text>;
 
-  if (!rememberMe) {
-    console.log("rememberMe is => ", rememberMe);
-    console.log("isLogging is => ", isLogging);
-    console.log("user is => ", user);
-    //  return router.replace("/login");
-  }
-
-  if (!isLogging && !rememberMe) {
-    console.log(" in REMEMBER ");
-    return <Redirect href="/login" />;
-  }
-
-  // router.replace("/login");
-  /*
-
-viene de afuera c remember: 0
-1 && 0  = 0 
-
-viene de afuera s remember: 1
-0 0 = 1 entra en login 
-
-desde login c remember 0 
-0 && = 0 
-
-desde login s remember 0 
-0 
-
-*/
-
-  // if (!rememberMe) {
-  //   return <Redirect href="/login" />;
-  // }
+  if (!isLogging && !rememberMe) return <Redirect href="/login" />;
 
   return (
     <Tabs

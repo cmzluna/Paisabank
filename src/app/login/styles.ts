@@ -2,6 +2,7 @@ import styled from "styled-components/native";
 import { getScale } from "../../utils";
 import BaseButton from "../../components/BaseButton";
 import { fontSize } from "../../theme/typography";
+import CheckBox from "react-native-check-box";
 
 const { horizontalScale, verticalScale } = getScale();
 
@@ -33,6 +34,24 @@ const BottomWrapper = styled.View`
   width: 100%;
   justify-content: center;
   align-items: center;
+`;
+
+const RowWrapper = styled.View`
+  width: 100%;
+  height: 20px;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: ${verticalScale(17)}px;
+`;
+
+const StyledCheckBox = styled(CheckBox)`
+  margin-right: 10px;
+`;
+
+const CheckboxText = styled.Text`
+  ${fontSize.medium};
+  color: #aaaaaa;
 `;
 
 const Title = styled.Text`
@@ -82,7 +101,10 @@ export {
   InputText,
   TopWrapper,
   MiddleWrapper,
+  RowWrapper,
   BottomWrapper,
   InputComponent,
   ButtonText,
+  CheckboxText,
+  StyledCheckBox,
 };

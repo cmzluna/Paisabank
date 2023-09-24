@@ -1,10 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
-import { ScrollView } from "react-native";
+import { Image, ScrollView } from "react-native";
 import { router } from "expo-router";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../store/slices/user";
 import { signIn } from "../../store/slices/auth";
 import Logo from "../../../assets/logo.svg";
+
 import {
   Container,
   TopWrapper,
@@ -16,15 +17,17 @@ import {
   Button,
   InputComponent,
   ButtonText,
+  StyledCheckBox,
+  RowWrapper,
+  CheckboxText,
 } from "./styles";
 import userLogin from "../../services/userLogin";
 import { useState } from "react";
-import CheckBox from "react-native-check-box";
 
 export default function Login(): React.JSX.Element {
   const dispatch = useDispatch();
-  const [userEmail, setUserEmail] = useState<string>("soypaisanx@paisanos.io");
-  const [userPassword, setUserPassword] = useState<string>("PAISANX2023!$");
+  const [userEmail, setUserEmail] = useState<string>("");
+  const [userPassword, setUserPassword] = useState<string>("");
   const [rememberMe, setRememberMe] = useState<boolean>(false);
 
   const handleLogin = async (): Promise<void> => {
@@ -45,12 +48,6 @@ export default function Login(): React.JSX.Element {
     );
 
     dispatch(signIn({}));
-
-    // if (rememberMe) {
-    //   await AsyncStorage.setItem("rememberMe", "true");
-    // }
-
-    // Navigates to Home screen after signing in
     router.replace("/");
   };
 
@@ -76,14 +73,22 @@ export default function Login(): React.JSX.Element {
             onChangeText={setUserPassword}
             value={userPassword}
           />
-          <CheckBox
-            style={{ flex: 1, padding: 10 }}
-            onClick={() => {
-              setRememberMe(!rememberMe);
-            }}
-            isChecked={rememberMe}
-            leftText={"Remember Me"}
-          />
+          <RowWrapper>
+            <StyledCheckBox
+              onClick={() => {
+                setRememberMe(!rememberMe);
+              }}
+              isChecked={rememberMe}
+              checkedImage={
+                <Image
+                  source={require("../../../assets/checkbox-on.png")}
+                  style={{ alignSelf: "center" }}
+                />
+              }
+              unCheckedImage={<Image source={require("../../../assets/checkbox-off.png")} />}
+            />
+            <CheckboxText>Recordarme</CheckboxText>
+          </RowWrapper>
         </MiddleWrapper>
 
         <BottomWrapper>
