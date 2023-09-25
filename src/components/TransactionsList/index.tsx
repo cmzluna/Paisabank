@@ -11,17 +11,25 @@ import { FlatList } from "react-native";
 import type { ParsedTransaction } from "../../types";
 import { useSelector } from "react-redux";
 import { type RootState } from "../../store";
+import LoadingIndicator from "../LoadingIndicator";
 
 interface ItemProps {
   item: ParsedTransaction;
 }
 
 interface TransactionsListProps {
-  isLoading;
+  data: ParsedTransaction[];
+  isLoading: boolean;
 }
 
-const TransactionsList = ({ isLoading, ...props }: TransactionsListProps): JSX.Element | null => {
-  const { transactions } = useSelector((state: RootState) => state.transactions);
+const TransactionsList = ({
+  data,
+  isLoading,
+  ...props
+}: TransactionsListProps): JSX.Element | null => {
+  // const { transactions } = useSelector((state: RootState) => state.transactions);
+
+  console.log("data in TransactionsList = ", data);
 
   const Item = ({ item }: ItemProps): JSX.Element => {
     const SvgComp = item.svgFile;
@@ -44,14 +52,11 @@ const TransactionsList = ({ isLoading, ...props }: TransactionsListProps): JSX.E
     return <Item item={item} />;
   };
 
+  if (isLoading) return <LoadingIndicator />;
+
   return (
     <Container>
-      <FlatList
-        data={transactions}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-        {...props}
-      />
+      <FlatList data={data} renderItem={renderItem} keyExtractor={(item) => item.id} {...props} />
     </Container>
   );
 };
