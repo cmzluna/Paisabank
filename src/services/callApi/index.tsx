@@ -34,8 +34,7 @@ export default async function callApi(
 
     return data;
   } catch (error) {
-    console.log("ACA ==", error);
-
+    console.log("callApi Error => ", error);
     if (axios.isAxiosError(error) && error.response?.data) {
       showToast(errorMessage, "error");
       return await Promise.reject(error.response.data);

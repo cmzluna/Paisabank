@@ -1,5 +1,6 @@
 import { Container, TitleWrapper, Title, SubTitle } from "./styles";
 import HeaderIcons from "../../../assets/icons/HeaderIcons.svg";
+import { SvgXml } from "react-native-svg";
 
 const Header = ({ ...props }): JSX.Element | null => {
   return (
@@ -8,7 +9,7 @@ const Header = ({ ...props }): JSX.Element | null => {
         <Title>Hola</Title>
         <SubTitle>Paisanx</SubTitle>
       </TitleWrapper>
-      <HeaderIcons />
+      <SvgXml width="48" height="48" xml={HeaderIcons} />
     </Container>
   );
 };

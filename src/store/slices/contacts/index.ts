@@ -1,46 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { type Card, type Contact, type Transaction } from "../../../types";
+import { type Contact } from "../../../types";
 
-export interface User {
-  name: string;
-  email: string;
-}
-
-interface AuthType {
-  user: User | null;
+interface ContactType {
   contacts: Contact[];
-  cards: Card[];
-  transactions: Transaction[];
-  isLoading: boolean;
-  rememberMe: boolean;
 }
 
-const initialState: AuthType = {
-  user: null,
+const initialState: ContactType = {
   contacts: [],
-  cards: [],
-  transactions: [],
-  isLoading: false,
-  rememberMe: false,
 };
 
-export const userSlice = createSlice({
-  name: "user",
+export const contactsSlice = createSlice({
+  name: "contacts",
   initialState,
   reducers: {
-    setUser: (prevState, { payload }) => {
+    setContacts: (prevState, { payload }) => {
       return {
-        user: { name: payload.name, email: payload.email },
-        isLoading: false,
-        rememberMe: payload.rememberMe,
+        contacts: payload,
       };
     },
-    deleteUser: (prevState, action) => {
-      return { user: null, isLoading: false, rememberMe: false };
+    resetContacts: (prevState, action) => {
+      return { contacts: [] };
     },
   },
 });
 
-export const { setUser, deleteUser } = userSlice.actions;
+export const { setContacts, resetContacts } = contactsSlice.actions;
 
-export default userSlice.reducer;
+export default contactsSlice.reducer;

@@ -1,11 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import CardsList from "../../components/CardsList";
 import TransactionsList from "../../components/TransactionsList";
-import SuscriptionIcon from "../../../assets/icons/arrows-up-down.svg";
-import CashInIcon from "../../../assets/icons/arrow-down-bold.svg";
-import CashOutIcon from "../../../assets/icons/arrow-up-bold.svg";
-import MastercardIcon from "../../../assets/icons/issuers/mastercard.svg";
-import VisaIcon from "../../../assets/icons/issuers/visa.svg";
 import Header from "../../components/Header";
 import { Container, SafeAreaContainer } from "./styles";
 import ActionsTabs from "../../components/ActionsTabs";
@@ -16,18 +11,20 @@ import { mapCardsArray, mapTransactionsArray } from "../../utils";
 import { setCards } from "../../store/slices/cards";
 import getUserTransactions from "../../services/getUserTransactions";
 import { setTransactions } from "../../store/slices/transactions";
+import getUserContacts from "../../services/getUserContacts";
+import { setContacts } from "../../store/slices/contacts";
 
 export default function Home(): React.JSX.Element {
-  const { isLoading: isLoadingCards, data: cardsData } = useCallApi(
-    getUserCards,
-    mapCardsArray,
-    setCards,
-  );
-  const { isLoading: isLoadingTransactions, data: transactionsData } = useCallApi(
-    getUserTransactions,
-    mapTransactionsArray,
-    setTransactions,
-  );
+  const { isLoading: isLoadingCards, data: cardsData } = useCallApi({
+    api: getUserCards,
+    dataCallback: mapCardsArray,
+    dispatchCallback: setCards,
+  });
+  const { isLoading: isLoadingTransactions, data: transactionsData } = useCallApi({
+    api: getUserTransactions,
+    dataCallback: mapTransactionsArray,
+    dispatchCallback: setTransactions,
+  });
 
   return (
     <SafeAreaContainer>
@@ -35,7 +32,7 @@ export default function Home(): React.JSX.Element {
         <Header />
         <CardsList isLoading={isLoadingCards} data={cardsData} />
 
-        <TransactionsList
+        {/* <TransactionsList
           data={transactionsData}
           isLoading={isLoadingTransactions}
           showsVerticalScrollIndicator={false}
@@ -46,7 +43,7 @@ export default function Home(): React.JSX.Element {
               <SectionTitle title={"Últimas transacciones"} contained />
             </>
           }
-        />
+        /> */}
       </Container>
     </SafeAreaContainer>
   );
