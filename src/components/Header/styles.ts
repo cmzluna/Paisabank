@@ -16,13 +16,17 @@ const Container = styled.View`
 
 const TitleWrapper = styled.View``;
 
-const Title = styled.Text`
+const MainText = styled.Text`
+  font-family: "Poppins-Regular";
+`;
+
+const Title = styled(MainText)`
   ${fontSize.large};
 `;
 
 const SubTitle = styled.Text`
   ${fontSize.xxlarge};
-  font-weight: 500;
+  font-family: "Poppins-Bold";
 `;
 
 export { Container, TitleWrapper, Title, SubTitle };
