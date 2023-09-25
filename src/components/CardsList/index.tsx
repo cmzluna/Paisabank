@@ -16,33 +16,22 @@ import {
 import { FlatList, type ViewToken } from "react-native";
 import type { Card, ParsedCard } from "../../types";
 import GradientChip from "../../../assets/gradient-chip.svg";
-import { ActivityIndicator, StyleSheet, View } from "react-native";
 import LoadingIndicator from "../LoadingIndicator";
-
+import { useSelector } from "react-redux";
+import { type RootState } from "../../store";
 interface ItemProps {
   item: ParsedCard;
 }
 
 interface CardsListProps {
-  data: ParsedCard[];
   isLoading: boolean;
 }
 
-/*
-  {
-    id: 1,
-    issuer: "mastercard",
-    name: "Soy Paisanx",
-    expDate: "2026-03-20",
-    lastDigits: 1234,
-    balance: "978,85",
-    currency: "USD",
-  },
-
-*/
-
-const CardsList = ({ data, isLoading }: CardsListProps): JSX.Element | null => {
+const CardsList = ({ isLoading }: CardsListProps): JSX.Element | null => {
   const [focusedItem, setFocusedItem] = useState<number | null>(null);
+  const { cards } = useSelector((state: RootState) => state.cards);
+
+  console.log("cards en CardsList ==> ", cards);
 
   const Item = ({ item }: ItemProps): JSX.Element => {
     //  const isOnTop = focusedItem === item.id;
@@ -108,7 +97,7 @@ const CardsList = ({ data, isLoading }: CardsListProps): JSX.Element | null => {
     <Container>
       <FlatList
         horizontal
-        data={data}
+        data={cards}
         renderItem={renderItem}
         // onViewableItemsChanged={onViewableItemsChanged}
         // viewabilityConfig={viewConfigRef.current}

@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { type Card, type Contact, type Transaction } from "../../../types";
 
 export interface User {
   name: string;
@@ -7,12 +8,18 @@ export interface User {
 
 interface AuthType {
   user: User | null;
+  contacts: Contact[];
+  cards: Card[];
+  transactions: Transaction[];
   isLoading: boolean;
   rememberMe: boolean;
 }
 
 const initialState: AuthType = {
   user: null,
+  contacts: [],
+  cards: [],
+  transactions: [],
   isLoading: false,
   rememberMe: false,
 };

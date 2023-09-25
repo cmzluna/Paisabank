@@ -3,7 +3,6 @@ import { Dimensions } from "react-native";
 import Toast from "react-native-toast-message";
 import MastercardIcon from "../../assets/icons/issuers/mastercard.svg";
 import VisaIcon from "../../assets/icons/issuers/visa.svg";
-import SuscriptionIcon from "../../assets/icons/arrows-up-down.svg";
 import CashInIcon from "../../assets/icons/arrow-down-bold.svg";
 import CashOutIcon from "../../assets/icons/arrow-up-bold.svg";
 
