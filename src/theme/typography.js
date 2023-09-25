@@ -1,10 +1,7 @@
-const fontFamily = `'Roboto'`;
-
 const fontWeight = {
-  light: "fontFamily: Roboto-Light",
-  regular: "fontFamily: Roboto-Regular",
-  medium: "fontFamily: Roboto-Medium",
-  bold: "fontFamily: Roboto-Bold",
+  regular: "fontFamily: Poppins-Regular",
+  medium: "fontFamily: Poppins-Medium",
+  bold: "fontFamily: Poppins-Bold",
 };
 
 const fontSize = {
@@ -18,4 +15,4 @@ const fontSize = {
   xxxlarge: "font-size: 40px",
 };
 
-export { fontFamily, fontWeight, fontSize };
+export { fontWeight, fontSize };

@@ -49,27 +49,31 @@ const StyledCheckBox = styled(CheckBox)`
   margin-right: 10px;
 `;
 
-const CheckboxText = styled.Text`
+const MainText = styled.Text`
+  font-family: "Poppins-Regular";
+`;
+
+const CheckboxText = styled(MainText)`
   ${fontSize.medium};
   color: #aaaaaa;
 `;
 
-const Title = styled.Text`
+const Title = styled(MainText)`
   ${fontSize.xxxlarge};
   color: #005cee;
 `;
 
-const SubTitle = styled.Text`
+const SubTitle = styled(MainText)`
   ${fontSize.large};
   color: #717e95;
 `;
 
-const ButtonText = styled.Text`
+const ButtonText = styled(MainText)`
   ${fontSize.large};
   color: #fff;
 `;
 
-const InputText = styled.Text`
+const InputText = styled(MainText)`
   ${fontSize.large};
   color: #334154;
   font-weight: 500;
