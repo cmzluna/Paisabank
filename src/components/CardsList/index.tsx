@@ -24,14 +24,15 @@ interface ItemProps {
 }
 
 interface CardsListProps {
+  data: ParsedCard[];
   isLoading: boolean;
 }
 
-const CardsList = ({ isLoading }: CardsListProps): JSX.Element | null => {
+const CardsList = ({ data, isLoading }: CardsListProps): JSX.Element | null => {
   const [focusedItem, setFocusedItem] = useState<number | null>(null);
-  const { cards } = useSelector((state: RootState) => state.cards);
+  //  const { cards } = useSelector((state: RootState) => state.cards);
 
-  console.log("cards en CardsList ==> ", cards);
+  console.log("cards en CardsList ==> ", data);
 
   const Item = ({ item }: ItemProps): JSX.Element => {
     //  const isOnTop = focusedItem === item.id;
@@ -97,7 +98,7 @@ const CardsList = ({ isLoading }: CardsListProps): JSX.Element | null => {
     <Container>
       <FlatList
         horizontal
-        data={cards}
+        data={data}
         renderItem={renderItem}
         // onViewableItemsChanged={onViewableItemsChanged}
         // viewabilityConfig={viewConfigRef.current}
