@@ -36,8 +36,6 @@ export default function Login(): React.JSX.Element {
       password: userPassword,
     });
 
-    if (result?.success) console.log("IN");
-
     dispatch(
       setUser({
         name: result?.data.name,
