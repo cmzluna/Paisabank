@@ -17,8 +17,9 @@ import { FlatList, type ViewToken } from "react-native";
 import type { Card, ParsedCard } from "../../types";
 import GradientChip from "../../../assets/gradient-chip.svg";
 import LoadingIndicator from "../LoadingIndicator";
-import { useSelector } from "react-redux";
-import { type RootState } from "../../store";
+import { SvgXml } from "react-native-svg";
+import MasterCard from "../../../assets/icons/issuers/mastercard.svg";
+
 interface ItemProps {
   item: ParsedCard;
 }
@@ -29,24 +30,26 @@ interface CardsListProps {
 }
 
 const CardsList = ({ data, isLoading }: CardsListProps): JSX.Element | null => {
+  console.log("DATA CARDSLIST = ", data);
   const [focusedItem, setFocusedItem] = useState<number | null>(null);
-  //  const { cards } = useSelector((state: RootState) => state.cards);
-
-  console.log("cards en CardsList ==> ", data);
 
   const Item = ({ item }: ItemProps): JSX.Element => {
     //  const isOnTop = focusedItem === item.id;
-    const SvgComp = item.svgFile;
+    //   const SvgComp = JSON.parse(item.svgFile);
+
+    console.log("SVG ITEM ", item.svgFile);
+    console.log(require("../../../assets/gradient-chip.svg"));
     return (
       <ItemContainer backgroundColor={"#005CEE"}>
         <ExtendedWrapper>
           <MediumText>Balance</MediumText>
-          <SvgComp />
+
+          <SvgXml width="200" height="200" xml={item.svgFile} />
         </ExtendedWrapper>
 
         <Wrapper>
           <Chip>
-            <GradientChip />
+            <SvgXml xml={GradientChip} />
             <PositionedText>{item.currency}</PositionedText>
           </Chip>
 
@@ -80,7 +83,6 @@ const CardsList = ({ data, isLoading }: CardsListProps): JSX.Element | null => {
       const { changed } = info;
       // console.log("Visible items are", viewableItems);
       // console.log("Changed in this iteration", changed);
-      console.log("INDEX ITEM ", changed[0].index);
 
       setFocusedItem(changed[0].index);
     },

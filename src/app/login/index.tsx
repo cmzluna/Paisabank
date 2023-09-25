@@ -4,6 +4,7 @@ import { router } from "expo-router";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../store/slices/user";
 import { signIn } from "../../store/slices/auth";
+import { SvgXml } from "react-native-svg";
 import Logo from "../../../assets/logo.svg";
 
 import {
@@ -55,7 +56,8 @@ export default function Login(): React.JSX.Element {
     <ScrollView automaticallyAdjustKeyboardInsets={true}>
       <Container>
         <TopWrapper>
-          <Logo width={48} height={48} />
+          <SvgXml width="48" height="48" xml={Logo} />
+          {/* <Logo width={48} height={48} /> */}
           <Title>PaisaBank</Title>
           <SubTitle>Comienza a manejar tu vida financiera</SubTitle>
         </TopWrapper>

@@ -8,6 +8,7 @@ import DocumentIcon from "../../../assets/icons/document.svg";
 import LogoutIcon from "../../../assets/icons/logout.svg";
 import ArrowBack from "../../../assets/icons/arrow-back.svg";
 import { BackButton } from "./styles";
+import { SvgXml } from "react-native-svg";
 
 export default function AppLayout(): React.JSX.Element {
   const { isLoading, rememberMe } = useSelector((state: RootState) => state.user);
@@ -36,7 +37,8 @@ export default function AppLayout(): React.JSX.Element {
           href: "/",
           tabBarIcon: ({ color }) => (
             <View>
-              <HomeIcon color={color} width={27} height={28.5} />
+              <SvgXml color={color} width={27} height={28.5} xml={HomeIcon} />
+              {/* <HomeIcon color={color} width={27} height={28.5} /> */}
             </View>
           ),
         }}
@@ -54,7 +56,8 @@ export default function AppLayout(): React.JSX.Element {
           // ),
           tabBarIcon: ({ color }) => (
             <View>
-              <DocumentIcon color={color} width={27} height={30} />
+              <SvgXml color={color} width={27} height={30} xml={DocumentIcon} />
+              {/* <DocumentIcon color={color} width={27} height={30} /> */}
             </View>
           ),
         }}
@@ -66,7 +69,8 @@ export default function AppLayout(): React.JSX.Element {
           headerShown: true,
           tabBarIcon: ({ color }) => (
             <View>
-              <LogoutIcon color={color} width={27} height={30} />
+              <SvgXml color={color} width={27} height={30} xml={LogoutIcon} />
+              {/* <LogoutIcon color={color} width={27} height={30} /> */}
             </View>
           ),
         }}

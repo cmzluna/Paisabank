@@ -4,6 +4,7 @@ import { FlatList, SectionList } from "react-native";
 import type { Contact } from "../../types";
 import TextAvatar from "./components/TextAvatar";
 import SectionTitle from "../SectionTitle";
+import LoadingIndicator from "../LoadingIndicator";
 
 interface ItemProps {
   item: Contact;
@@ -14,6 +15,7 @@ interface ContactsListProps {
     title: string;
     data: Contact[];
   }>;
+  isLoading: boolean;
 }
 
 /*
@@ -80,10 +82,12 @@ const Item = ({ item }: ItemProps): JSX.Element => {
   );
 };
 
-const ContactsList = ({ sections, ...props }: ContactsListProps): JSX.Element | null => {
+const ContactsList = ({ sections, isLoading, ...props }: ContactsListProps): JSX.Element | null => {
   const renderItem = ({ item }: { item: Contact }): JSX.Element => {
     return <Item item={item} />;
   };
+
+  if (isLoading || sections.length === 0) return <LoadingIndicator />;
 
   return (
     <Container>
