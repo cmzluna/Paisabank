@@ -9,21 +9,32 @@ export default async function callApi(
   dataRequest: object,
   errorMessage: string,
 ): Promise<any> {
-  const axiosInstance = axios.create({
+  // const axiosInstance = axios.create({
+  //   baseURL: API_BASE_URL,
+  //   url,
+  //   method,
+  //   headers: {
+  //     "x-api-key": API_KEY,
+  //   },
+  // });
+
+  const requestConfig = {
     baseURL: API_BASE_URL,
     url,
+    data: dataRequest,
     method,
     headers: {
       "x-api-key": API_KEY,
     },
-  });
+  };
 
   try {
-    const { data } = await axiosInstance(url, dataRequest);
+    //  const { data } = await axiosInstance(url, dataRequest);
+    const { data } = await axios.request(requestConfig);
 
     return data;
   } catch (error) {
-    console.log("ACA");
+    console.log("ACA ==", error);
 
     if (axios.isAxiosError(error) && error.response?.data) {
       showToast(errorMessage, "error");

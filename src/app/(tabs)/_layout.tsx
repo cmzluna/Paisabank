@@ -8,8 +8,6 @@ import DocumentIcon from "../../../assets/icons/document.svg";
 import LogoutIcon from "../../../assets/icons/logout.svg";
 import ArrowBack from "../../../assets/icons/arrow-back.svg";
 import { BackButton } from "./styles";
-import getUserContacts from "../../services/getUserContacts";
-import useCallApi from "../../hooks/useCallApi";
 
 export default function AppLayout(): React.JSX.Element {
   const { isLoading, rememberMe } = useSelector((state: RootState) => state.user);
@@ -19,8 +17,6 @@ export default function AppLayout(): React.JSX.Element {
   if (isLoading) return <Text>Loading...</Text>;
 
   if (!isLogging && !rememberMe) return <Redirect href="/login" />;
-
-  const { isLoading: isLoadingUserContacts, data: userContacts } = useCallApi(getUserContacts);
 
   return (
     <Tabs

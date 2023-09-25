@@ -1,6 +1,8 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import userReducer from "./slices/user";
 import authReducer from "./slices/auth";
+import cardsReducer from "./slices/cards";
+import transactionsReducer from "./slices/transactions";
 import {
   persistStore,
   persistReducer,
@@ -35,9 +37,23 @@ const userPersistConfig = {
   stateReconciler: autoMergeLevel2,
 };
 
+const cardsPersistConfig = {
+  key: "cards",
+  storage: AsyncStorage,
+  stateReconciler: autoMergeLevel2,
+};
+
+const transactionsPersistConfig = {
+  key: "transactions",
+  storage: AsyncStorage,
+  stateReconciler: autoMergeLevel2,
+};
+
 const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
   user: persistReducer(userPersistConfig, userReducer),
+  cards: persistReducer(cardsPersistConfig, cardsReducer),
+  transactions: persistReducer(transactionsPersistConfig, transactionsReducer),
   // transactions: transactionsReducer,
 });
 

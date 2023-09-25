@@ -26,8 +26,8 @@ import { useState } from "react";
 
 export default function Login(): React.JSX.Element {
   const dispatch = useDispatch();
-  const [userEmail, setUserEmail] = useState<string>("");
-  const [userPassword, setUserPassword] = useState<string>("");
+  const [userEmail, setUserEmail] = useState<string>("soypaisanx@paisanos.io");
+  const [userPassword, setUserPassword] = useState<string>("PAISANX2023!$");
   const [rememberMe, setRememberMe] = useState<boolean>(false);
 
   const handleLogin = async (): Promise<void> => {
@@ -35,6 +35,8 @@ export default function Login(): React.JSX.Element {
       email: userEmail,
       password: userPassword,
     });
+
+    if (result?.success) console.log("IN");
 
     dispatch(
       setUser({
