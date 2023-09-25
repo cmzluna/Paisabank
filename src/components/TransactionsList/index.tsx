@@ -9,8 +9,7 @@ import {
 } from "./styles";
 import { FlatList } from "react-native";
 import type { ParsedTransaction } from "../../types";
-import { useSelector } from "react-redux";
-import { type RootState } from "../../store";
+import { SvgXml } from "react-native-svg";
 import LoadingIndicator from "../LoadingIndicator";
 
 interface ItemProps {
@@ -32,11 +31,9 @@ const TransactionsList = ({
   console.log("data in TransactionsList = ", data);
 
   const Item = ({ item }: ItemProps): JSX.Element => {
-    const SvgComp = item.svgFile;
-
     return (
       <ItemContainer>
-        <SvgComp />
+        <SvgXml xml={item.svgFile} />
 
         <ColumnWrapper>
           <LargeText>{item.title}</LargeText>

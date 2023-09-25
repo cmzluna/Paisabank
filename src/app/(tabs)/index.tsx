@@ -32,7 +32,7 @@ export default function Home(): React.JSX.Element {
         <Header />
         <CardsList isLoading={isLoadingCards} data={cardsData} />
 
-        {/* <TransactionsList
+        <TransactionsList
           data={transactionsData}
           isLoading={isLoadingTransactions}
           showsVerticalScrollIndicator={false}
@@ -43,7 +43,7 @@ export default function Home(): React.JSX.Element {
               <SectionTitle title={"Últimas transacciones"} contained />
             </>
           }
-        /> */}
+        />
       </Container>
     </SafeAreaContainer>
   );

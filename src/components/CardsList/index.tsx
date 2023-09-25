@@ -18,7 +18,6 @@ import type { Card, ParsedCard } from "../../types";
 import GradientChip from "../../../assets/gradient-chip.svg";
 import LoadingIndicator from "../LoadingIndicator";
 import { SvgXml } from "react-native-svg";
-import MasterCard from "../../../assets/icons/issuers/mastercard.svg";
 
 interface ItemProps {
   item: ParsedCard;
@@ -30,21 +29,17 @@ interface CardsListProps {
 }
 
 const CardsList = ({ data, isLoading }: CardsListProps): JSX.Element | null => {
-  console.log("DATA CARDSLIST = ", data);
   const [focusedItem, setFocusedItem] = useState<number | null>(null);
 
   const Item = ({ item }: ItemProps): JSX.Element => {
     //  const isOnTop = focusedItem === item.id;
-    //   const SvgComp = JSON.parse(item.svgFile);
 
-    console.log("SVG ITEM ", item.svgFile);
-    console.log(require("../../../assets/gradient-chip.svg"));
     return (
       <ItemContainer backgroundColor={"#005CEE"}>
         <ExtendedWrapper>
           <MediumText>Balance</MediumText>
 
-          <SvgXml width="200" height="200" xml={item.svgFile} />
+          <SvgXml width="48" height="48" xml={item.svgFile} />
         </ExtendedWrapper>
 
         <Wrapper>
