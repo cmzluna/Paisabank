@@ -18,27 +18,6 @@ export const getScale = () => {
   return { horizontalScale, verticalScale };
 };
 
-export const getItemsByCurrentMonth = (arr) => {
-  const today = new Date();
-  const actualMonth = (today.getMonth() + 1).toString();
-
-  return arr.filter((elem) => {
-    const elemMonth = elem.addedDate.split("-")[1];
-    const parsedMonth = elemMonth[0] === "0" ? elemMonth[1] : elemMonth;
-
-    return actualMonth === parsedMonth;
-  });
-};
-
-export const filterArrayByPersonalData = (array, string) => {
-  if (!(typeof string === "string")) return [];
-  const formattedStr = string.toLowerCase();
-
-  return array.filter((item) =>
-    (item.name + item.lastName + item.phone).toLowerCase().includes(formattedStr),
-  );
-};
-
 export const showToast = (message, type = "success", position = "top") => {
   Toast.show({
     type,
@@ -47,6 +26,31 @@ export const showToast = (message, type = "success", position = "top") => {
     position,
     visibilityTime: 3000,
   });
+};
+
+export const getItemsByCurrentMonth = (arr) => {
+  const today = new Date();
+  const currentMonth = (today.getMonth() + 1).toString();
+  const currentYear = today.getFullYear().toString();
+
+  return arr.filter((elem) => {
+    const splittedValues = elem.addedDate.split("-");
+    const elemYear = splittedValues[0];
+    const elemMonth = splittedValues[1];
+    // takes away 0 from digits
+    const parsedMonth = elemMonth[0] === "0" ? elemMonth[1] : elemMonth;
+
+    return currentMonth === parsedMonth && elemYear === currentYear;
+  });
+};
+
+export const filterArrayByPersonalData = (array, searchString) => {
+  if (!searchString || !(typeof searchString === "string")) return [];
+  const formattedStr = searchString.toLowerCase();
+
+  return array.filter((item) =>
+    (item.name + item.lastName + item.phone).toLowerCase().includes(formattedStr),
+  );
 };
 
 export const mapTransactionsArray = (array) => {
