@@ -2,6 +2,7 @@ import styled from "styled-components/native";
 import { getScale } from "../../utils";
 import BaseButton from "../../components/BaseButton";
 import { fontSize } from "../../theme/typography";
+import CheckBox from "react-native-check-box";
 
 const { horizontalScale, verticalScale } = getScale();
 
@@ -35,22 +36,44 @@ const BottomWrapper = styled.View`
   align-items: center;
 `;
 
-const Title = styled.Text`
+const RowWrapper = styled.View`
+  width: 100%;
+  height: 20px;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: ${verticalScale(17)}px;
+`;
+
+const StyledCheckBox = styled(CheckBox)`
+  margin-right: 10px;
+`;
+
+const MainText = styled.Text`
+  font-family: "Poppins-Regular";
+`;
+
+const CheckboxText = styled(MainText)`
+  ${fontSize.medium};
+  color: #aaaaaa;
+`;
+
+const Title = styled(MainText)`
   ${fontSize.xxxlarge};
   color: #005cee;
 `;
 
-const SubTitle = styled.Text`
+const SubTitle = styled(MainText)`
   ${fontSize.large};
   color: #717e95;
 `;
 
-const ButtonText = styled.Text`
+const ButtonText = styled(MainText)`
   ${fontSize.large};
   color: #fff;
 `;
 
-const InputText = styled.Text`
+const InputText = styled(MainText)`
   ${fontSize.large};
   color: #334154;
   font-weight: 500;
@@ -82,7 +105,10 @@ export {
   InputText,
   TopWrapper,
   MiddleWrapper,
+  RowWrapper,
   BottomWrapper,
   InputComponent,
   ButtonText,
+  CheckboxText,
+  StyledCheckBox,
 };

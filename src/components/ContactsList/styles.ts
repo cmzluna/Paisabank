@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 import BaseButton from "../BaseButton";
 import { getScale } from "../../utils";
-import { fontSize } from "../../theme/typography";
+import { fontSize, fontWeight } from "../../theme/typography";
 
 const { horizontalScale, verticalScale } = getScale();
 
@@ -70,6 +70,7 @@ const MediumText = styled.Text<MediumTextProps>`
 
 const LargeText = styled.Text`
   ${fontSize.large};
+  ${fontWeight.medium};
 `;
 
 const XxlargeText = styled.Text`

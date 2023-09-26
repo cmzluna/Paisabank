@@ -3,6 +3,7 @@ import WalletIcon from "../../../assets/icons/wallet.svg";
 import TransferIcon from "../../../assets/icons/transfer.svg";
 import PaymentIcon from "../../../assets/icons/payment.svg";
 import RechargeIcon from "../../../assets/icons/recharge.svg";
+import { SvgXml } from "react-native-svg";
 
 const buttonsData = [
   {
@@ -35,12 +36,11 @@ const ActionsTabs = ({ ...props }): JSX.Element | null => {
   return (
     <Container>
       {buttonsData.map(({ title, icon, backgroundColor, ...rest }, id) => {
-        const SvgComp = icon;
         return (
           <Button key={id} title={title} {...rest}>
             <>
               <IconWrapper backgroundColor={backgroundColor}>
-                <SvgComp />
+                <SvgXml width="21" height="23" xml={icon} />
               </IconWrapper>
               <TextComp fontSize={16}>{title}</TextComp>
             </>

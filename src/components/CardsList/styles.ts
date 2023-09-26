@@ -59,6 +59,7 @@ const Chip = styled.View`
 `;
 
 const WhiteText = styled.Text`
+  font-family: "Poppins-Regular";
   color: #fff;
 `;
 
@@ -80,6 +81,7 @@ const MediumText = styled(WhiteText)`
 
 const LargeText = styled(WhiteText)`
   ${fontSize.large};
+  height: ${verticalScale(25)}px;
 `;
 
 const XxlargeText = styled(WhiteText)`
@@ -88,6 +90,7 @@ const XxlargeText = styled(WhiteText)`
 
 const PositionedText = styled(MediumText)`
   position: absolute;
+  font-family: "Poppins-Regular";
 `;
 
 const Button = styled(BaseButton)`

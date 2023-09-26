@@ -1,9 +1,9 @@
 import styled from "styled-components/native";
 import BaseButton from "../BaseButton";
 import { getScale } from "../../utils";
-import { fontSize } from "../../theme/typography";
+import { fontSize, fontWeight } from "../../theme/typography";
 
-const { horizontalScale } = getScale();
+const { horizontalScale, verticalScale } = getScale();
 
 const Container = styled.View`
   flex: 1;
@@ -11,7 +11,7 @@ const Container = styled.View`
 `;
 
 const ItemContainer = styled.TouchableOpacity`
-  flex: 1;
+  height: ${verticalScale(92)}px;
   flex-direction: row;
   border-radius: 14px;
   background-color: #fff;
@@ -57,7 +57,7 @@ const SmallText = styled.Text`
 `;
 
 const XsmallText = styled.Text`
-  ${fontSize.xsmall};
+  ${fontWeight.medium};
   color: #aaa;
 `;
 
@@ -65,12 +65,15 @@ interface MediumTextProps {
   color: string;
 }
 const MediumText = styled.Text<MediumTextProps>`
+  font-family: "Poppins-Medium";
   ${fontSize.medium};
   font-weight: 500;
   color: ${(props) => props.color};
 `;
 
 const LargeText = styled.Text`
+  color: #616e7c;
+  font-family: "Poppins-Medium";
   ${fontSize.large};
 `;
 

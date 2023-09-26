@@ -1,9 +1,18 @@
 import styled from "styled-components/native";
-import { Link } from "expo-router";
+import { SafeAreaView } from "react-native-safe-area-context";
+import BaseButton from "../../../components/BaseButton";
 
-const BackButton = styled(Link)`
-  margin-left: 24px;
-  border: 1px solid blue;
+const Container = styled.View`
+  width: 100%;
+  display: flex;
+  flex: 1;
+  align-items: "center";
+  justify-content: "center";
 `;
 
-export { BackButton };
+const SafeAreaContainer = styled(SafeAreaView)`
+  flex: 1;
+  background-color: #eee;
+`;
+
+export { SafeAreaContainer, Container };
