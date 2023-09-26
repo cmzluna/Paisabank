@@ -14,7 +14,6 @@ const useCallApi = ({ api, dataCallback, dispatchCallback }) => {
           const formattedData =
             dataCallback && typeof dataCallback === "function" ? dataCallback(res.data) : res;
 
-          console.log("ACAAAAA");
           if (dispatchCallback && typeof dispatchCallback === "function")
             dispatch(dispatchCallback(formattedData));
 
