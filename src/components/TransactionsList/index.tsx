@@ -28,8 +28,6 @@ const TransactionsList = ({
 }: TransactionsListProps): JSX.Element | null => {
   // const { transactions } = useSelector((state: RootState) => state.transactions);
 
-  console.log("data in TransactionsList = ", data);
-
   const Item = ({ item }: ItemProps): JSX.Element => {
     return (
       <ItemContainer>

@@ -6,7 +6,6 @@ import VisaIcon from "../../assets/icons/issuers/visa.svg";
 import CashInIcon from "../../assets/icons/arrow-down-bold.svg";
 import CashOutIcon from "../../assets/icons/arrow-up-bold.svg";
 import SuscriptionIcon from "../../assets/icons/arrows-up-down.svg";
-import SvgUri from "react-native-svg-uri";
 
 export const getScale = () => {
   const { width, height } = Dimensions.get("screen");
@@ -79,7 +78,6 @@ export const mapTransactionsArray = (array) => {
 };
 
 export const mapCardsArray = (array) => {
-  console.log(" en mapCardsArray ==*** ");
   return array.map((el) => {
     let svgFile = null;
 

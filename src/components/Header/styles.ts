@@ -1,5 +1,4 @@
 import styled from "styled-components/native";
-import BaseButton from "../../components/BaseButton";
 import { getScale } from "../../utils";
 import { fontSize } from "../../theme/typography";
 
