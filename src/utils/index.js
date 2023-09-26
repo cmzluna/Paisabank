@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { Dimensions } from "react-native";
 import Toast from "react-native-toast-message";
-import MastercardIcon from "../../assets/icons/issuers/mastercard.svg";
-import VisaIcon from "../../assets/icons/issuers/visa.svg";
-import CashInIcon from "../../assets/icons/arrow-down-bold.svg";
-import CashOutIcon from "../../assets/icons/arrow-up-bold.svg";
-import SuscriptionIcon from "../../assets/icons/arrows-up-down.svg";
+import MastercardIcon from "assets/icons/issuers/mastercard.svg";
+import VisaIcon from "assets/icons/issuers/visa.svg";
+import CashInIcon from "assets/icons/arrow-down-bold.svg";
+import CashOutIcon from "assets/icons/arrow-up-bold.svg";
+import SuscriptionIcon from "assets/icons/arrows-up-down.svg";
 
 export const getScale = () => {
   const { width, height } = Dimensions.get("screen");

@@ -1,6 +1,6 @@
 import { Container, StyledActivityIndicator } from "./styles";
 
-const LoadingIndicator = () => {
+const LoadingIndicator = (): JSX.Element => {
   return (
     <Container>
       <StyledActivityIndicator size="large" />
