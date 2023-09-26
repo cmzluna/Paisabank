@@ -2,77 +2,47 @@
 import { Container, StyledInputSearch } from "./styles";
 import ContactsList from "../../../components/ContactsList";
 import { filterArrayByPersonalData, getItemsByCurrentMonth } from "../../../utils";
-import { useState } from "react";
-
-const data = [
-  {
-    id: 1,
-    name: "Ronaldo",
-    lastName: "Martins",
-    phone: "+541133556531",
-    addedDate: "2022-12-07",
-  },
-  {
-    id: 2,
-    name: "Lidia",
-    lastName: "Roldan",
-    phone: "+541133556532",
-    addedDate: "2022-09-08",
-  },
-  {
-    id: 3,
-    name: "Carlos",
-    lastName: "Gutierrez",
-    phone: "+541133556533",
-    addedDate: "2022-12-09",
-  },
-  {
-    id: 4,
-    name: "Josefina Miranda",
-    lastName: "Torres",
-    phone: "+541133556534",
-    addedDate: "2022-12-10",
-  },
-  {
-    id: 5,
-    name: "Belen",
-    lastName: "Salvador",
-    phone: "+541133556535",
-    addedDate: "2023-09-09",
-  },
-  {
-    id: 6,
-    name: "Jorge",
-    lastName: "Cruz",
-    phone: "+541133556536",
-    addedDate: "2023-01-10",
-  },
-];
+import { useEffect, useState } from "react";
+import useCallApi from "../../../hooks/useCallApi";
+import getUserContacts from "../../../services/getUserContacts";
+import { setContacts } from "../../../store/slices/contacts";
 
 export default function Contacts(): React.JSX.Element {
-  const recentContacts = getItemsByCurrentMonth(data);
-  const initialDataArray = recentContacts?.length
-    ? [
-        { title: "Recents", data: recentContacts },
-        { title: "All", data },
-      ]
-    : [{ title: "All", data }];
-
+  const [sectionsArray, setSectionsArray] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
-  const [contactsData, setContactsData] = useState(initialDataArray);
+
+  const { isLoading: isLoadingContacts, data: contacts } = useCallApi({
+    api: getUserContacts,
+    dispatchCallback: setContacts,
+  });
+
+  useEffect(() => {
+    if (contacts && contacts.data && contacts.data.length > 0) {
+      const recentContacts = getItemsByCurrentMonth(contacts.data);
+      const initialsectionsArray = recentContacts?.length
+        ? [
+            { title: "Recents", data: recentContacts },
+            { title: "All", data: contacts.data },
+          ]
+        : [{ title: "All", data: contacts.data }];
+
+      setSectionsArray(initialsectionsArray);
+    }
+  }, [contacts]);
 
   const onSearch = (text: string): void => {
     if (text) {
-      const results = filterArrayByPersonalData(data, text);
+      const results = filterArrayByPersonalData(contacts.data, text);
       const parsedResults = [{ title: "Search results", data: results }];
 
-      setContactsData(parsedResults);
+      setSectionsArray(parsedResults);
       setSearchQuery(text);
 
       return;
     }
+
     setSearchQuery("");
-    setContactsData(initialDataArray);
+    setSectionsArray([{ title: "All", data: contacts.data }]);
   };
 
   return (
@@ -84,7 +54,7 @@ export default function Contacts(): React.JSX.Element {
         }}
       />
 
-      <ContactsList sections={contactsData} />
+      <ContactsList isLoading={isLoadingContacts} sections={sectionsArray} />
     </Container>
   );
 }

@@ -1,11 +1,10 @@
-import React, { useCallback, useState, useRef } from "react";
+import React, { useCallback, useState } from "react";
 import {
   Container,
   Wrapper,
   ExtendedWrapper,
   ItemContainer,
   Chip,
-  ItemTitle,
   ColumnWrapper,
   MediumText,
   XxsmallText,
@@ -14,46 +13,38 @@ import {
   XxlargeText,
   PositionedText,
 } from "./styles";
-import { FlatList, Text, type ViewToken } from "react-native";
+import { FlatList, type ViewToken } from "react-native";
 import type { Card, ParsedCard } from "../../types";
 import GradientChip from "../../../assets/gradient-chip.svg";
+import LoadingIndicator from "../LoadingIndicator";
+import { SvgXml } from "react-native-svg";
+
 interface ItemProps {
   item: ParsedCard;
 }
 
 interface CardsListProps {
   data: ParsedCard[];
+  isLoading: boolean;
 }
 
-/*
-  {
-    id: 1,
-    issuer: "mastercard",
-    name: "Soy Paisanx",
-    expDate: "2026-03-20",
-    lastDigits: 1234,
-    balance: "978,85",
-    currency: "USD",
-  },
-
-*/
-
-const CardsList = ({ data }: CardsListProps): JSX.Element | null => {
+const CardsList = ({ data, isLoading }: CardsListProps): JSX.Element | null => {
   const [focusedItem, setFocusedItem] = useState<number | null>(null);
 
   const Item = ({ item }: ItemProps): JSX.Element => {
     //  const isOnTop = focusedItem === item.id;
-    const SvgComp = item.svgFile;
+
     return (
       <ItemContainer backgroundColor={"#005CEE"}>
         <ExtendedWrapper>
           <MediumText>Balance</MediumText>
-          <SvgComp />
+
+          <SvgXml width="48" height="48" xml={item.svgFile} />
         </ExtendedWrapper>
 
         <Wrapper>
           <Chip>
-            <GradientChip />
+            <SvgXml xml={GradientChip} />
             <PositionedText>{item.currency}</PositionedText>
           </Chip>
 
@@ -87,7 +78,6 @@ const CardsList = ({ data }: CardsListProps): JSX.Element | null => {
       const { changed } = info;
       // console.log("Visible items are", viewableItems);
       // console.log("Changed in this iteration", changed);
-      console.log("INDEX ITEM ", changed[0].index);
 
       setFocusedItem(changed[0].index);
     },
@@ -97,6 +87,8 @@ const CardsList = ({ data }: CardsListProps): JSX.Element | null => {
   const viewConfigRef = React.useRef({
     itemVisiblePercentThreshold: 70,
   });
+
+  if (isLoading) return <LoadingIndicator />;
 
   // try with  viewAreaCoveragePercentThreshold: 50,
   return (

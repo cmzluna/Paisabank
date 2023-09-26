@@ -1,29 +1,27 @@
-import { Redirect, Tabs } from "expo-router";
+import { Redirect, Tabs, router } from "expo-router";
 import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "../../store";
 import { Text, View } from "react-native";
-import { signOut } from "../../store/slices/user";
+import { deleteUser } from "../../store/slices/user";
 import HomeIcon from "../../../assets/icons/home.svg";
 import DocumentIcon from "../../../assets/icons/document.svg";
 import LogoutIcon from "../../../assets/icons/logout.svg";
 import ArrowBack from "../../../assets/icons/arrow-back.svg";
 import { BackButton } from "./styles";
+import { SvgXml } from "react-native-svg";
 
 export default function AppLayout(): React.JSX.Element {
-  const { user, isLoading } = useSelector((state: RootState) => state.user);
+  const { isLoading, rememberMe } = useSelector((state: RootState) => state.user);
+  const { isLogging } = useSelector((state: RootState) => state.auth);
   const dispatch = useDispatch();
 
-  if (isLoading) {
-    return <Text>Loading...</Text>;
-  }
+  if (isLoading) return <Text>Loading...</Text>;
 
-  if (!user) {
-    return <Redirect href="/login" />;
-  }
+  if (!isLogging && !rememberMe) return <Redirect href="/login" />;
 
   return (
     <Tabs
-      initialRouteName="contacts/index"
+      initialRouteName="index"
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
@@ -32,14 +30,15 @@ export default function AppLayout(): React.JSX.Element {
       }}
     >
       <Tabs.Screen
-        name="home/index"
+        name="index"
         options={{
           title: "Home",
           headerShown: false,
-          href: "/home",
+          href: "/",
           tabBarIcon: ({ color }) => (
             <View>
-              <HomeIcon color={color} width={27} height={28.5} />
+              <SvgXml color={color} width={27} height={28.5} xml={HomeIcon} />
+              {/* <HomeIcon color={color} width={27} height={28.5} /> */}
             </View>
           ),
         }}
@@ -57,25 +56,29 @@ export default function AppLayout(): React.JSX.Element {
           // ),
           tabBarIcon: ({ color }) => (
             <View>
-              <DocumentIcon color={color} width={27} height={30} />
+              <SvgXml color={color} width={27} height={30} xml={DocumentIcon} />
+              {/* <DocumentIcon color={color} width={27} height={30} /> */}
             </View>
           ),
         }}
       />
       <Tabs.Screen
-        name="index"
+        name="logout/index"
         options={{
           title: "Logout",
+          headerShown: true,
           tabBarIcon: ({ color }) => (
             <View>
-              <LogoutIcon color={color} width={27} height={30} />
+              <SvgXml color={color} width={27} height={30} xml={LogoutIcon} />
+              {/* <LogoutIcon color={color} width={27} height={30} /> */}
             </View>
           ),
         }}
         listeners={() => ({
           tabPress: (e) => {
             e.preventDefault();
-            dispatch(signOut({}));
+            dispatch(deleteUser({}));
+            router.replace("/login");
           },
         })}
       />

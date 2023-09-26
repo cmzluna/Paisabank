@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 import { getScale } from "../../../../utils";
-import { fontSize } from "../../../../theme/typography";
+import { fontSize, fontWeight } from "../../../../theme/typography";
 
 const { horizontalScale } = getScale();
 
@@ -15,6 +15,7 @@ const Container = styled.View`
 
 const Text = styled.Text`
   color: #68c6e5;
+  ${fontWeight.medium};
   font-weight: 500;
   ${fontSize.large};
   text-transform: uppercase;

@@ -21,6 +21,7 @@ interface TextCompProps {
 
 const TextComp = styled.Text<TextCompProps>`
   color: #616e7c;
+  font-family: "Poppins-Medium";
   font-size: ${(props) => props.fontSize}px;
   font-weight: 500;
   margin-top: ${verticalScale(12)}px;

@@ -16,9 +16,9 @@ const Container = styled.View<ContainerProps>`
 `;
 
 const Title = styled.Text`
-  color: #aaa;
+  color: #aaaaaa;
   ${fontSize.xlarge};
-  font-weight: 500;
+  font-family: "Poppins-Medium";
 `;
 
 const Divider = styled.View`
