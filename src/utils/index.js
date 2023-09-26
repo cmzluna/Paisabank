@@ -90,8 +90,6 @@ export const mapCardsArray = (array) => {
         break;
     }
 
-    // const svgString = SvgUri(svgFile).toString();
-
     return { ...el, svgFile };
   });
 };

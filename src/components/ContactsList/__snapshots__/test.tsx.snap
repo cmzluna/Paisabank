@@ -1,0 +1,579 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly it matches snapshot 1`] = `
+<View
+  style={
+    {
+      "flexBasis": 0,
+      "flexGrow": 1,
+      "flexShrink": 1,
+    }
+  }
+>
+  <RCTScrollView
+    data={
+      [
+        {
+          "data": [
+            {
+              "lastName": "Perez",
+              "name": "Juan",
+              "phone": "111-1111",
+            },
+          ],
+          "title": "Title 1",
+        },
+        {
+          "data": [
+            {
+              "lastName": "Rodriguez",
+              "name": "Martin",
+              "phone": "222-2222",
+            },
+          ],
+          "title": "Title 2",
+        },
+        {
+          "data": [
+            {
+              "lastName": "Alvarez",
+              "name": "Carlos",
+              "phone": "333-3333",
+            },
+          ],
+          "title": "Title 3",
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={
+      [
+        0,
+        3,
+        6,
+      ]
+    }
+  >
+    <View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            {
+              "marginBottom": 32,
+              "marginLeft": 39,
+              "marginRight": 0,
+              "marginTop": 32,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#aaaaaa",
+                "fontFamily": "Poppins-Medium",
+                "fontSize": 20,
+              }
+            }
+          >
+            Title 1
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "borderBottomColor": "#acbac3",
+              "borderBottomWidth": 1,
+              "borderLeftColor": "#acbac3",
+              "borderRightColor": "#acbac3",
+              "borderTopColor": "#acbac3",
+              "height": 1,
+              "marginBottom": 35,
+              "width": "100%",
+            }
+          }
+        />
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "#fff",
+              "borderBottomLeftRadius": 14,
+              "borderBottomRightRadius": 14,
+              "borderTopLeftRadius": 14,
+              "borderTopRightRadius": 14,
+              "flexDirection": "row",
+              "height": 136,
+              "justifyContent": "space-between",
+              "marginBottom": 47,
+              "marginLeft": 20,
+              "marginRight": 20,
+              "marginTop": 0,
+              "opacity": 1,
+              "paddingBottom": 20,
+              "paddingLeft": 20,
+              "paddingRight": 20,
+              "paddingTop": 20,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "backgroundColor": "#caf0ff",
+                "borderBottomLeftRadius": 12,
+                "borderBottomRightRadius": 12,
+                "borderTopLeftRadius": 12,
+                "borderTopRightRadius": 12,
+                "height": 79,
+                "justifyContent": "center",
+                "width": 79,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "color": "#68c6e5",
+                  "fontFamily": "Poppins-Medium",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "textTransform": "uppercase",
+                }
+              }
+            >
+              JP
+            </Text>
+          </View>
+          <View
+            style={
+              {
+                "flexBasis": 0,
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "marginLeft": 28,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Poppins-Medium",
+                  "fontSize": 16,
+                }
+              }
+            >
+              Juan
+               
+              Perez
+            </Text>
+            <Text
+              style={
+                {
+                  "color": "#aaa",
+                  "fontSize": 12,
+                }
+              }
+            >
+               
+              111-1111
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      />
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            {
+              "marginBottom": 32,
+              "marginLeft": 39,
+              "marginRight": 0,
+              "marginTop": 32,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#aaaaaa",
+                "fontFamily": "Poppins-Medium",
+                "fontSize": 20,
+              }
+            }
+          >
+            Title 2
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "borderBottomColor": "#acbac3",
+              "borderBottomWidth": 1,
+              "borderLeftColor": "#acbac3",
+              "borderRightColor": "#acbac3",
+              "borderTopColor": "#acbac3",
+              "height": 1,
+              "marginBottom": 35,
+              "width": "100%",
+            }
+          }
+        />
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "#fff",
+              "borderBottomLeftRadius": 14,
+              "borderBottomRightRadius": 14,
+              "borderTopLeftRadius": 14,
+              "borderTopRightRadius": 14,
+              "flexDirection": "row",
+              "height": 136,
+              "justifyContent": "space-between",
+              "marginBottom": 47,
+              "marginLeft": 20,
+              "marginRight": 20,
+              "marginTop": 0,
+              "opacity": 1,
+              "paddingBottom": 20,
+              "paddingLeft": 20,
+              "paddingRight": 20,
+              "paddingTop": 20,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "backgroundColor": "#caf0ff",
+                "borderBottomLeftRadius": 12,
+                "borderBottomRightRadius": 12,
+                "borderTopLeftRadius": 12,
+                "borderTopRightRadius": 12,
+                "height": 79,
+                "justifyContent": "center",
+                "width": 79,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "color": "#68c6e5",
+                  "fontFamily": "Poppins-Medium",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "textTransform": "uppercase",
+                }
+              }
+            >
+              MR
+            </Text>
+          </View>
+          <View
+            style={
+              {
+                "flexBasis": 0,
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "marginLeft": 28,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Poppins-Medium",
+                  "fontSize": 16,
+                }
+              }
+            >
+              Martin
+               
+              Rodriguez
+            </Text>
+            <Text
+              style={
+                {
+                  "color": "#aaa",
+                  "fontSize": 12,
+                }
+              }
+            >
+               
+              222-2222
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      />
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          style={
+            {
+              "marginBottom": 32,
+              "marginLeft": 39,
+              "marginRight": 0,
+              "marginTop": 32,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#aaaaaa",
+                "fontFamily": "Poppins-Medium",
+                "fontSize": 20,
+              }
+            }
+          >
+            Title 3
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "borderBottomColor": "#acbac3",
+              "borderBottomWidth": 1,
+              "borderLeftColor": "#acbac3",
+              "borderRightColor": "#acbac3",
+              "borderTopColor": "#acbac3",
+              "height": 1,
+              "marginBottom": 35,
+              "width": "100%",
+            }
+          }
+        />
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "#fff",
+              "borderBottomLeftRadius": 14,
+              "borderBottomRightRadius": 14,
+              "borderTopLeftRadius": 14,
+              "borderTopRightRadius": 14,
+              "flexDirection": "row",
+              "height": 136,
+              "justifyContent": "space-between",
+              "marginBottom": 47,
+              "marginLeft": 20,
+              "marginRight": 20,
+              "marginTop": 0,
+              "opacity": 1,
+              "paddingBottom": 20,
+              "paddingLeft": 20,
+              "paddingRight": 20,
+              "paddingTop": 20,
+            }
+          }
+        >
+          <View
+            style={
+              {
+                "alignItems": "center",
+                "backgroundColor": "#caf0ff",
+                "borderBottomLeftRadius": 12,
+                "borderBottomRightRadius": 12,
+                "borderTopLeftRadius": 12,
+                "borderTopRightRadius": 12,
+                "height": 79,
+                "justifyContent": "center",
+                "width": 79,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "color": "#68c6e5",
+                  "fontFamily": "Poppins-Medium",
+                  "fontSize": 16,
+                  "fontWeight": "500",
+                  "textTransform": "uppercase",
+                }
+              }
+            >
+              CA
+            </Text>
+          </View>
+          <View
+            style={
+              {
+                "flexBasis": 0,
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "marginLeft": 28,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "fontFamily": "Poppins-Medium",
+                  "fontSize": 16,
+                }
+              }
+            >
+              Carlos
+               
+              Alvarez
+            </Text>
+            <Text
+              style={
+                {
+                  "color": "#aaa",
+                  "fontSize": 12,
+                }
+              }
+            >
+               
+              333-3333
+            </Text>
+          </View>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      />
+    </View>
+  </RCTScrollView>
+</View>
+`;
