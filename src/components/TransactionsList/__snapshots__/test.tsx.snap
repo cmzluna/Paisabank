@@ -1,0 +1,684 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly it matches snapshot 1`] = `
+<View
+  style={
+    {
+      "flexBasis": 0,
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "marginBottom": 0,
+      "marginLeft": 43,
+      "marginRight": 43,
+      "marginTop": 0,
+    }
+  }
+>
+  <RCTScrollView
+    data={
+      [
+        {
+          "amount": "100",
+          "color": "#eee",
+          "date": "2023-01-01",
+          "id": 1,
+          "svgFile": "<svg width="35" height="25" viewBox="0 0 35 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Logo">
+<circle id="Ellipse 33" cx="12.2229" cy="12.2229" r="12.2229" fill="#E9231A"/>
+<circle id="Ellipse 34" opacity="0.8" cx="21.7885" cy="12.2229" r="12.2229" fill="#E99418"/>
+</g>
+</svg>
+",
+          "title": "Title 1",
+          "transactionType": "SUS",
+          "transactionTypeLabel": "SUS label",
+        },
+        {
+          "amount": "200",
+          "color": "#eee",
+          "date": "2023-06-12",
+          "id": 2,
+          "svgFile": "<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icons8-visa 1">
+<path id="Vector" d="M45 35C45 37.209 43.209 39 41 39H7C4.791 39 3 37.209 3 35V13C3 10.791 4.791 9 7 9H41C43.209 9 45 10.791 45 13V35Z" fill="#2100C4"/>
+<path id="Vector_2" d="M15.186 19L12.56 26.832C12.56 26.832 11.893 23.519 11.827 23.103C10.332 19.692 8.126 19.882 8.126 19.882L10.726 30V29.998H13.887L18.258 19H15.186ZM17.689 30H20.56L22.296 19H19.389L17.689 30ZM38.008 19H34.987L30.277 30H33.129L33.717 28.429H37.313L37.619 30H40.232L38.008 19ZM34.513 26.328L36.076 22.171L36.894 26.328H34.513ZM26.369 22.206C26.369 21.6 26.867 21.149 28.295 21.149C29.223 21.149 30.286 21.823 30.286 21.823L30.752 19.514C30.752 19.514 29.394 18.999 28.061 18.999C25.042 18.999 23.485 20.443 23.485 22.271C23.485 25.577 27.464 25.124 27.464 26.822C27.464 27.113 27.233 27.786 25.576 27.786C23.914 27.786 22.817 27.177 22.817 27.177L22.322 29.393C22.322 29.393 23.385 29.999 25.439 29.999C27.498 29.999 30.354 28.459 30.354 26.247C30.354 23.586 26.369 23.394 26.369 22.206Z" fill="white"/>
+<path id="Vector_3" d="M12.212 24.945L11.246 20.197C11.246 20.197 10.809 19.168 9.673 19.168C8.537 19.168 5.233 19.168 5.233 19.168C5.233 19.168 10.894 20.84 12.212 24.945Z" fill="#F5BC00"/>
+</g>
+</svg>
+",
+          "title": "Title 2",
+          "transactionType": "CASH_IN",
+          "transactionTypeLabel": "CASH_IN label",
+        },
+        {
+          "amount": "300",
+          "color": "#eee",
+          "date": "2023-04-03",
+          "id": 3,
+          "svgFile": "<svg width="35" height="25" viewBox="0 0 35 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Logo">
+<circle id="Ellipse 33" cx="12.2229" cy="12.2229" r="12.2229" fill="#E9231A"/>
+<circle id="Ellipse 34" opacity="0.8" cx="21.7885" cy="12.2229" r="12.2229" fill="#E99418"/>
+</g>
+</svg>
+",
+          "title": "Title 3",
+          "transactionType": "CASH_OUT",
+          "transactionTypeLabel": "CASH_OUT label",
+        },
+      ]
+    }
+    getItem={[Function]}
+    getItemCount={[Function]}
+    keyExtractor={[Function]}
+    onContentSizeChange={[Function]}
+    onLayout={[Function]}
+    onMomentumScrollBegin={[Function]}
+    onMomentumScrollEnd={[Function]}
+    onScroll={[Function]}
+    onScrollBeginDrag={[Function]}
+    onScrollEndDrag={[Function]}
+    removeClippedSubviews={false}
+    renderItem={[Function]}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={[]}
+    viewabilityConfigCallbackPairs={[]}
+  >
+    <View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "#fff",
+              "borderBottomLeftRadius": 14,
+              "borderBottomRightRadius": 14,
+              "borderTopLeftRadius": 14,
+              "borderTopRightRadius": 14,
+              "flexDirection": "row",
+              "height": 136,
+              "justifyContent": "space-between",
+              "marginBottom": 47,
+              "opacity": 1,
+              "paddingBottom": 20,
+              "paddingLeft": 20,
+              "paddingRight": 20,
+              "paddingTop": 20,
+            }
+          }
+          testID="transaction-info"
+        >
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight="25"
+            bbWidth="35"
+            fill="none"
+            focusable={false}
+            height={25}
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              [
+                {
+                  "backgroundColor": "transparent",
+                  "borderWidth": 0,
+                },
+                {
+                  "flex": 0,
+                  "height": 25,
+                  "width": 35,
+                },
+              ]
+            }
+            vbHeight={25}
+            vbWidth={35}
+            width={35}
+            xml="<svg width="35" height="25" viewBox="0 0 35 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Logo">
+<circle id="Ellipse 33" cx="12.2229" cy="12.2229" r="12.2229" fill="#E9231A"/>
+<circle id="Ellipse 34" opacity="0.8" cx="21.7885" cy="12.2229" r="12.2229" fill="#E99418"/>
+</g>
+</svg>
+"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <RNSVGGroup
+              fill={null}
+              propList={
+                [
+                  "fill",
+                ]
+              }
+            >
+              <RNSVGGroup
+                fill={
+                  {
+                    "payload": 4278190080,
+                    "type": 0,
+                  }
+                }
+                name="Logo"
+              >
+                <RNSVGCircle
+                  cx="12.2229"
+                  cy="12.2229"
+                  fill={
+                    {
+                      "payload": 4293468954,
+                      "type": 0,
+                    }
+                  }
+                  name="Ellipse 33"
+                  propList={
+                    [
+                      "fill",
+                    ]
+                  }
+                  r="12.2229"
+                />
+                <RNSVGCircle
+                  cx="21.7885"
+                  cy="12.2229"
+                  fill={
+                    {
+                      "payload": 4293497880,
+                      "type": 0,
+                    }
+                  }
+                  name="Ellipse 34"
+                  opacity={0.8}
+                  propList={
+                    [
+                      "fill",
+                    ]
+                  }
+                  r="12.2229"
+                />
+              </RNSVGGroup>
+            </RNSVGGroup>
+          </RNSVGSvgView>
+          <View
+            style={
+              {
+                "flexBasis": 0,
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "marginLeft": 28,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "color": "#616e7c",
+                  "fontFamily": "Poppins-Medium",
+                  "fontSize": 16,
+                }
+              }
+            >
+              Title 1
+            </Text>
+            <Text
+              style={
+                {
+                  "color": "#aaa",
+                  "fontFamily": "Poppins-Medium",
+                }
+              }
+            >
+               
+              SUS label
+            </Text>
+          </View>
+          <Text
+            color="#eee"
+            style={
+              {
+                "color": "#eee",
+                "fontFamily": "Poppins-Medium",
+                "fontSize": 14,
+                "fontWeight": "500",
+              }
+            }
+          >
+            $
+            100
+          </Text>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "#fff",
+              "borderBottomLeftRadius": 14,
+              "borderBottomRightRadius": 14,
+              "borderTopLeftRadius": 14,
+              "borderTopRightRadius": 14,
+              "flexDirection": "row",
+              "height": 136,
+              "justifyContent": "space-between",
+              "marginBottom": 47,
+              "opacity": 1,
+              "paddingBottom": 20,
+              "paddingLeft": 20,
+              "paddingRight": 20,
+              "paddingTop": 20,
+            }
+          }
+          testID="transaction-info"
+        >
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight="48"
+            bbWidth="48"
+            fill="none"
+            focusable={false}
+            height={48}
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              [
+                {
+                  "backgroundColor": "transparent",
+                  "borderWidth": 0,
+                },
+                {
+                  "flex": 0,
+                  "height": 48,
+                  "width": 48,
+                },
+              ]
+            }
+            vbHeight={48}
+            vbWidth={48}
+            width={48}
+            xml="<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icons8-visa 1">
+<path id="Vector" d="M45 35C45 37.209 43.209 39 41 39H7C4.791 39 3 37.209 3 35V13C3 10.791 4.791 9 7 9H41C43.209 9 45 10.791 45 13V35Z" fill="#2100C4"/>
+<path id="Vector_2" d="M15.186 19L12.56 26.832C12.56 26.832 11.893 23.519 11.827 23.103C10.332 19.692 8.126 19.882 8.126 19.882L10.726 30V29.998H13.887L18.258 19H15.186ZM17.689 30H20.56L22.296 19H19.389L17.689 30ZM38.008 19H34.987L30.277 30H33.129L33.717 28.429H37.313L37.619 30H40.232L38.008 19ZM34.513 26.328L36.076 22.171L36.894 26.328H34.513ZM26.369 22.206C26.369 21.6 26.867 21.149 28.295 21.149C29.223 21.149 30.286 21.823 30.286 21.823L30.752 19.514C30.752 19.514 29.394 18.999 28.061 18.999C25.042 18.999 23.485 20.443 23.485 22.271C23.485 25.577 27.464 25.124 27.464 26.822C27.464 27.113 27.233 27.786 25.576 27.786C23.914 27.786 22.817 27.177 22.817 27.177L22.322 29.393C22.322 29.393 23.385 29.999 25.439 29.999C27.498 29.999 30.354 28.459 30.354 26.247C30.354 23.586 26.369 23.394 26.369 22.206Z" fill="white"/>
+<path id="Vector_3" d="M12.212 24.945L11.246 20.197C11.246 20.197 10.809 19.168 9.673 19.168C8.537 19.168 5.233 19.168 5.233 19.168C5.233 19.168 10.894 20.84 12.212 24.945Z" fill="#F5BC00"/>
+</g>
+</svg>
+"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <RNSVGGroup
+              fill={null}
+              propList={
+                [
+                  "fill",
+                ]
+              }
+            >
+              <RNSVGGroup
+                fill={
+                  {
+                    "payload": 4278190080,
+                    "type": 0,
+                  }
+                }
+                name="icons8-visa 1"
+              >
+                <RNSVGPath
+                  d="M45 35C45 37.209 43.209 39 41 39H7C4.791 39 3 37.209 3 35V13C3 10.791 4.791 9 7 9H41C43.209 9 45 10.791 45 13V35Z"
+                  fill={
+                    {
+                      "payload": 4280352964,
+                      "type": 0,
+                    }
+                  }
+                  name="Vector"
+                  propList={
+                    [
+                      "fill",
+                    ]
+                  }
+                />
+                <RNSVGPath
+                  d="M15.186 19L12.56 26.832C12.56 26.832 11.893 23.519 11.827 23.103C10.332 19.692 8.126 19.882 8.126 19.882L10.726 30V29.998H13.887L18.258 19H15.186ZM17.689 30H20.56L22.296 19H19.389L17.689 30ZM38.008 19H34.987L30.277 30H33.129L33.717 28.429H37.313L37.619 30H40.232L38.008 19ZM34.513 26.328L36.076 22.171L36.894 26.328H34.513ZM26.369 22.206C26.369 21.6 26.867 21.149 28.295 21.149C29.223 21.149 30.286 21.823 30.286 21.823L30.752 19.514C30.752 19.514 29.394 18.999 28.061 18.999C25.042 18.999 23.485 20.443 23.485 22.271C23.485 25.577 27.464 25.124 27.464 26.822C27.464 27.113 27.233 27.786 25.576 27.786C23.914 27.786 22.817 27.177 22.817 27.177L22.322 29.393C22.322 29.393 23.385 29.999 25.439 29.999C27.498 29.999 30.354 28.459 30.354 26.247C30.354 23.586 26.369 23.394 26.369 22.206Z"
+                  fill={
+                    {
+                      "payload": 4294967295,
+                      "type": 0,
+                    }
+                  }
+                  name="Vector_2"
+                  propList={
+                    [
+                      "fill",
+                    ]
+                  }
+                />
+                <RNSVGPath
+                  d="M12.212 24.945L11.246 20.197C11.246 20.197 10.809 19.168 9.673 19.168C8.537 19.168 5.233 19.168 5.233 19.168C5.233 19.168 10.894 20.84 12.212 24.945Z"
+                  fill={
+                    {
+                      "payload": 4294294528,
+                      "type": 0,
+                    }
+                  }
+                  name="Vector_3"
+                  propList={
+                    [
+                      "fill",
+                    ]
+                  }
+                />
+              </RNSVGGroup>
+            </RNSVGGroup>
+          </RNSVGSvgView>
+          <View
+            style={
+              {
+                "flexBasis": 0,
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "marginLeft": 28,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "color": "#616e7c",
+                  "fontFamily": "Poppins-Medium",
+                  "fontSize": 16,
+                }
+              }
+            >
+              Title 2
+            </Text>
+            <Text
+              style={
+                {
+                  "color": "#aaa",
+                  "fontFamily": "Poppins-Medium",
+                }
+              }
+            >
+               
+              CASH_IN label
+            </Text>
+          </View>
+          <Text
+            color="#eee"
+            style={
+              {
+                "color": "#eee",
+                "fontFamily": "Poppins-Medium",
+                "fontSize": 14,
+                "fontWeight": "500",
+              }
+            }
+          >
+            $
+            200
+          </Text>
+        </View>
+      </View>
+      <View
+        onFocusCapture={[Function]}
+        onLayout={[Function]}
+        style={null}
+      >
+        <View
+          accessibilityState={
+            {
+              "busy": undefined,
+              "checked": undefined,
+              "disabled": undefined,
+              "expanded": undefined,
+              "selected": undefined,
+            }
+          }
+          accessibilityValue={
+            {
+              "max": undefined,
+              "min": undefined,
+              "now": undefined,
+              "text": undefined,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={false}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            {
+              "alignItems": "center",
+              "backgroundColor": "#fff",
+              "borderBottomLeftRadius": 14,
+              "borderBottomRightRadius": 14,
+              "borderTopLeftRadius": 14,
+              "borderTopRightRadius": 14,
+              "flexDirection": "row",
+              "height": 136,
+              "justifyContent": "space-between",
+              "marginBottom": 47,
+              "opacity": 1,
+              "paddingBottom": 20,
+              "paddingLeft": 20,
+              "paddingRight": 20,
+              "paddingTop": 20,
+            }
+          }
+          testID="transaction-info"
+        >
+          <RNSVGSvgView
+            align="xMidYMid"
+            bbHeight="25"
+            bbWidth="35"
+            fill="none"
+            focusable={false}
+            height={25}
+            meetOrSlice={0}
+            minX={0}
+            minY={0}
+            style={
+              [
+                {
+                  "backgroundColor": "transparent",
+                  "borderWidth": 0,
+                },
+                {
+                  "flex": 0,
+                  "height": 25,
+                  "width": 35,
+                },
+              ]
+            }
+            vbHeight={25}
+            vbWidth={35}
+            width={35}
+            xml="<svg width="35" height="25" viewBox="0 0 35 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Logo">
+<circle id="Ellipse 33" cx="12.2229" cy="12.2229" r="12.2229" fill="#E9231A"/>
+<circle id="Ellipse 34" opacity="0.8" cx="21.7885" cy="12.2229" r="12.2229" fill="#E99418"/>
+</g>
+</svg>
+"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <RNSVGGroup
+              fill={null}
+              propList={
+                [
+                  "fill",
+                ]
+              }
+            >
+              <RNSVGGroup
+                fill={
+                  {
+                    "payload": 4278190080,
+                    "type": 0,
+                  }
+                }
+                name="Logo"
+              >
+                <RNSVGCircle
+                  cx="12.2229"
+                  cy="12.2229"
+                  fill={
+                    {
+                      "payload": 4293468954,
+                      "type": 0,
+                    }
+                  }
+                  name="Ellipse 33"
+                  propList={
+                    [
+                      "fill",
+                    ]
+                  }
+                  r="12.2229"
+                />
+                <RNSVGCircle
+                  cx="21.7885"
+                  cy="12.2229"
+                  fill={
+                    {
+                      "payload": 4293497880,
+                      "type": 0,
+                    }
+                  }
+                  name="Ellipse 34"
+                  opacity={0.8}
+                  propList={
+                    [
+                      "fill",
+                    ]
+                  }
+                  r="12.2229"
+                />
+              </RNSVGGroup>
+            </RNSVGGroup>
+          </RNSVGSvgView>
+          <View
+            style={
+              {
+                "flexBasis": 0,
+                "flexDirection": "column",
+                "flexGrow": 1,
+                "flexShrink": 1,
+                "marginLeft": 28,
+              }
+            }
+          >
+            <Text
+              style={
+                {
+                  "color": "#616e7c",
+                  "fontFamily": "Poppins-Medium",
+                  "fontSize": 16,
+                }
+              }
+            >
+              Title 3
+            </Text>
+            <Text
+              style={
+                {
+                  "color": "#aaa",
+                  "fontFamily": "Poppins-Medium",
+                }
+              }
+            >
+               
+              CASH_OUT label
+            </Text>
+          </View>
+          <Text
+            color="#eee"
+            style={
+              {
+                "color": "#eee",
+                "fontFamily": "Poppins-Medium",
+                "fontSize": 14,
+                "fontWeight": "500",
+              }
+            }
+          >
+            $
+            300
+          </Text>
+        </View>
+      </View>
+    </View>
+  </RCTScrollView>
+</View>
+`;

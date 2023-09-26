@@ -2,7 +2,7 @@ import renderer from "react-test-renderer";
 import ActionsTab from ".";
 import WalletIcon from "assets/icons/wallet.svg";
 import TransferIcon from "assets/icons/transfer.svg";
-import BaseButton from "../../components/BaseButton";
+import BaseButton from "components/BaseButton";
 
 const mockedData = [
   {

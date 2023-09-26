@@ -1,13 +1,13 @@
 import { type Transaction } from "../../types";
 import callApi from "../callApi";
 
-interface TransactionApi {
+interface ApiOutput {
   success: boolean;
   data: Transaction[];
 }
 
-const getUserTransactions = async (body = {}) =>
-  await callApi<TransactionApi>(
+const getUserTransactions = async (): Promise<ApiOutput> =>
+  await callApi<ApiOutput>(
     "/paisabank/transactions",
     "get",
     {},

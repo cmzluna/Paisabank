@@ -2,7 +2,7 @@ import axios from "axios";
 import { API_BASE_URL, API_KEY } from "@env";
 import { showToast } from "../../utils";
 
-export default async function callApi(
+export default async function callApi<T>(
   url: string,
   method: string,
   dataRequest: object,
@@ -19,7 +19,7 @@ export default async function callApi(
   };
 
   try {
-    const { data } = await axios.request(requestConfig);
+    const { data } = await axios.request<{ data: T }>(requestConfig);
 
     return data;
   } catch (error) {

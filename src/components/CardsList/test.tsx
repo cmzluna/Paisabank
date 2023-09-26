@@ -44,7 +44,11 @@ describe("renders correctly", () => {
     expect(ActionsTabComponent).toMatchSnapshot();
   });
 
-  it("renders loading indicator if loading prop is true", () => {});
+  it("renders loading indicator if loading prop is true", () => {
+    const { getByAccessibilityHint } = render(<CardsListComponent data={mockedData} isLoading />);
+
+    expect(getByAccessibilityHint("loading...")).toBeTruthy();
+  });
 
   it("renders all items correctly", () => {
     const { getAllByTestId } = render(<CardsListComponent data={mockedData} isLoading={false} />);
