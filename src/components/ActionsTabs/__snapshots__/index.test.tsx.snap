@@ -1,0 +1,299 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly match snapshot 1`] = `
+<View
+  style={
+    {
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+    }
+  }
+>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={false}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "borderBottomLeftRadius": 8,
+        "borderBottomRightRadius": 8,
+        "borderTopLeftRadius": 8,
+        "borderTopRightRadius": 8,
+        "justifyContent": "center",
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      backgroundColor="#E4FFF0"
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "#E4FFF0",
+          "borderBottomLeftRadius": 16,
+          "borderBottomRightRadius": 16,
+          "borderTopLeftRadius": 16,
+          "borderTopRightRadius": 16,
+          "height": 104,
+          "justifyContent": "center",
+          "width": 104,
+        }
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight="23"
+        bbWidth="21"
+        fill="none"
+        focusable={false}
+        height="23"
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        style={
+          [
+            {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            {
+              "flex": 0,
+              "height": 23,
+              "width": 21,
+            },
+          ]
+        }
+        vbHeight={22}
+        vbWidth={22}
+        width="21"
+        xml="<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.6507 17.2546H16.2957C14.1815 17.2546 12.4615 15.5345 12.4615 13.4203C12.4615 11.3061 14.1815 9.58606 16.2957 9.58606H19.6507C19.9157 9.58606 20.1301 9.37168 20.1301 9.10676V7.6689C20.1301 6.66384 19.3505 5.84646 18.3655 5.7672L15.6129 0.959363C15.3578 0.514705 14.9459 0.196894 14.453 0.0649253C13.9625 -0.0661444 13.4495 0.00269307 13.0105 0.258227L3.57442 5.75174H1.91716C0.859839 5.75174 0 6.61154 0 7.6689V19.1718C0 20.2291 0.859794 21.0889 1.91716 21.0889H18.2129C19.2702 21.0889 20.1301 20.2291 20.1301 19.1718V17.7339C20.1301 17.469 19.9157 17.2546 19.6507 17.2546ZM16.2073 3.92764L17.2516 5.75174H13.0742L16.2073 3.92764ZM5.47959 5.75174L13.493 1.08666C13.7097 0.959812 13.9629 0.926112 14.205 0.990726C14.4497 1.05624 14.6538 1.21445 14.7807 1.43583L14.7817 1.43758L7.37176 5.75174H5.47959Z" fill="#74CC9B"/>
+<path d="M19.6503 10.5446H16.2953C14.7095 10.5446 13.4196 11.8346 13.4196 13.4204C13.4196 15.0061 14.7095 16.2961 16.2953 16.2961H19.6503C20.4432 16.2961 21.0882 15.6511 21.0882 14.8582V11.9825C21.0882 11.1896 20.4432 10.5446 19.6503 10.5446ZM16.2953 14.3789C15.7669 14.3789 15.3367 13.9488 15.3367 13.4204C15.3367 12.8919 15.7669 12.4618 16.2953 12.4618C16.8237 12.4618 17.2539 12.8919 17.2539 13.4204C17.2539 13.9488 16.8238 14.3789 16.2953 14.3789Z" fill="#74CC9B"/>
+</svg>
+"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+            ]
+          }
+        >
+          <RNSVGPath
+            d="M19.6507 17.2546H16.2957C14.1815 17.2546 12.4615 15.5345 12.4615 13.4203C12.4615 11.3061 14.1815 9.58606 16.2957 9.58606H19.6507C19.9157 9.58606 20.1301 9.37168 20.1301 9.10676V7.6689C20.1301 6.66384 19.3505 5.84646 18.3655 5.7672L15.6129 0.959363C15.3578 0.514705 14.9459 0.196894 14.453 0.0649253C13.9625 -0.0661444 13.4495 0.00269307 13.0105 0.258227L3.57442 5.75174H1.91716C0.859839 5.75174 0 6.61154 0 7.6689V19.1718C0 20.2291 0.859794 21.0889 1.91716 21.0889H18.2129C19.2702 21.0889 20.1301 20.2291 20.1301 19.1718V17.7339C20.1301 17.469 19.9157 17.2546 19.6507 17.2546ZM16.2073 3.92764L17.2516 5.75174H13.0742L16.2073 3.92764ZM5.47959 5.75174L13.493 1.08666C13.7097 0.959812 13.9629 0.926112 14.205 0.990726C14.4497 1.05624 14.6538 1.21445 14.7807 1.43583L14.7817 1.43758L7.37176 5.75174H5.47959Z"
+            fill={
+              {
+                "payload": 4285844635,
+                "type": 0,
+              }
+            }
+            propList={
+              [
+                "fill",
+              ]
+            }
+          />
+          <RNSVGPath
+            d="M19.6503 10.5446H16.2953C14.7095 10.5446 13.4196 11.8346 13.4196 13.4204C13.4196 15.0061 14.7095 16.2961 16.2953 16.2961H19.6503C20.4432 16.2961 21.0882 15.6511 21.0882 14.8582V11.9825C21.0882 11.1896 20.4432 10.5446 19.6503 10.5446ZM16.2953 14.3789C15.7669 14.3789 15.3367 13.9488 15.3367 13.4204C15.3367 12.8919 15.7669 12.4618 16.2953 12.4618C16.8237 12.4618 17.2539 12.8919 17.2539 13.4204C17.2539 13.9488 16.8238 14.3789 16.2953 14.3789Z"
+            fill={
+              {
+                "payload": 4285844635,
+                "type": 0,
+              }
+            }
+            propList={
+              [
+                "fill",
+              ]
+            }
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
+    <Text
+      fontSize={16}
+      style={
+        {
+          "color": "#616e7c",
+          "fontFamily": "Poppins-Medium",
+          "fontSize": 16,
+          "fontWeight": "500",
+          "marginTop": 17,
+        }
+      }
+    >
+      Billetera
+    </Text>
+  </View>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={false}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "borderBottomLeftRadius": 8,
+        "borderBottomRightRadius": 8,
+        "borderTopLeftRadius": 8,
+        "borderTopRightRadius": 8,
+        "justifyContent": "center",
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      backgroundColor="#FEEAD4"
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "#FEEAD4",
+          "borderBottomLeftRadius": 16,
+          "borderBottomRightRadius": 16,
+          "borderTopLeftRadius": 16,
+          "borderTopRightRadius": 16,
+          "height": 104,
+          "justifyContent": "center",
+          "width": 104,
+        }
+      }
+    >
+      <RNSVGSvgView
+        align="xMidYMid"
+        bbHeight="23"
+        bbWidth="21"
+        fill="none"
+        focusable={false}
+        height="23"
+        meetOrSlice={0}
+        minX={0}
+        minY={0}
+        style={
+          [
+            {
+              "backgroundColor": "transparent",
+              "borderWidth": 0,
+            },
+            {
+              "flex": 0,
+              "height": 23,
+              "width": 21,
+            },
+          ]
+        }
+        vbHeight={24}
+        vbWidth={22}
+        width="21"
+        xml="<svg width="22" height="24" viewBox="0 0 22 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.5321 0.724937C13.5321 1.1251 13.2073 1.44987 12.8072 1.44987C10.0089 1.44987 7.73263 3.72615 7.73263 6.52439L7.73263 13.5321L10.874 13.5321C11.5119 13.5321 11.8348 14.2995 11.3979 14.7577L6.32336 20.0738C6.18708 20.2169 5.99763 20.2981 5.79948 20.2981C5.60133 20.2981 5.41188 20.2169 5.2756 20.0738L0.201075 14.7577C-0.237751 14.2976 0.088952 13.5321 0.724959 13.5321L3.86633 13.5321L3.86633 7.49097C3.86633 3.36079 7.22711 5.40614e-06 11.3573 5.2256e-06L12.8072 5.16223e-06C13.2073 5.14474e-06 13.5321 0.324773 13.5321 0.724937Z" fill="#EF9C55"/>
+<path d="M20.5398 9.66576L17.3984 9.66576L17.3984 15.7069C17.3984 19.837 14.0376 23.1978 9.90744 23.1978L8.45758 23.1978C8.05742 23.1978 7.73265 22.873 7.73265 22.4729C7.73265 22.0727 8.05742 21.748 8.45758 21.748C11.2558 21.748 13.5321 19.4717 13.5321 16.6734L13.5321 9.66576L10.3907 9.66576C9.75569 9.66576 9.42609 8.9012 9.86684 8.44014L14.9414 3.12398C15.0777 2.98093 15.2671 2.89973 15.4652 2.89973C15.6634 2.89973 15.8528 2.98093 15.9891 3.12398L21.0637 8.44014C21.5025 8.9012 21.1758 9.66576 20.5398 9.66576Z" fill="#EF9C55"/>
+</svg>
+"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <RNSVGGroup
+          fill={null}
+          propList={
+            [
+              "fill",
+            ]
+          }
+        >
+          <RNSVGPath
+            d="M13.5321 0.724937C13.5321 1.1251 13.2073 1.44987 12.8072 1.44987C10.0089 1.44987 7.73263 3.72615 7.73263 6.52439L7.73263 13.5321L10.874 13.5321C11.5119 13.5321 11.8348 14.2995 11.3979 14.7577L6.32336 20.0738C6.18708 20.2169 5.99763 20.2981 5.79948 20.2981C5.60133 20.2981 5.41188 20.2169 5.2756 20.0738L0.201075 14.7577C-0.237751 14.2976 0.088952 13.5321 0.724959 13.5321L3.86633 13.5321L3.86633 7.49097C3.86633 3.36079 7.22711 5.40614e-06 11.3573 5.2256e-06L12.8072 5.16223e-06C13.2073 5.14474e-06 13.5321 0.324773 13.5321 0.724937Z"
+            fill={
+              {
+                "payload": 4293893205,
+                "type": 0,
+              }
+            }
+            propList={
+              [
+                "fill",
+              ]
+            }
+          />
+          <RNSVGPath
+            d="M20.5398 9.66576L17.3984 9.66576L17.3984 15.7069C17.3984 19.837 14.0376 23.1978 9.90744 23.1978L8.45758 23.1978C8.05742 23.1978 7.73265 22.873 7.73265 22.4729C7.73265 22.0727 8.05742 21.748 8.45758 21.748C11.2558 21.748 13.5321 19.4717 13.5321 16.6734L13.5321 9.66576L10.3907 9.66576C9.75569 9.66576 9.42609 8.9012 9.86684 8.44014L14.9414 3.12398C15.0777 2.98093 15.2671 2.89973 15.4652 2.89973C15.6634 2.89973 15.8528 2.98093 15.9891 3.12398L21.0637 8.44014C21.5025 8.9012 21.1758 9.66576 20.5398 9.66576Z"
+            fill={
+              {
+                "payload": 4293893205,
+                "type": 0,
+              }
+            }
+            propList={
+              [
+                "fill",
+              ]
+            }
+          />
+        </RNSVGGroup>
+      </RNSVGSvgView>
+    </View>
+    <Text
+      fontSize={16}
+      style={
+        {
+          "color": "#616e7c",
+          "fontFamily": "Poppins-Medium",
+          "fontSize": 16,
+          "fontWeight": "500",
+          "marginTop": 17,
+        }
+      }
+    >
+      Transferir
+    </Text>
+  </View>
+</View>
+`;

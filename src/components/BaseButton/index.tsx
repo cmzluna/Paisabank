@@ -13,6 +13,8 @@ const BaseButton = ({
   children,
   ...props
 }: BaseButtonProps): JSX.Element | null => {
+  if (!children) return null;
+
   return (
     <TouchableOpacity activeOpacity={0.45} onPress={onPress} {...props}>
       {children}

@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly match snapshot 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "flexDirection": "row",
+      "height": 78,
+      "justifyContent": "space-between",
+      "marginBottom": 57,
+      "marginLeft": 44,
+      "marginRight": 43,
+      "marginTop": 43,
+    }
+  }
+>
+  <View
+    style={{}}
+  >
+    <Text
+      style={
+        {
+          "fontFamily": "Poppins-Regular",
+          "fontSize": 16,
+        }
+      }
+    >
+      Hola
+    </Text>
+    <Text
+      style={
+        {
+          "fontFamily": "Poppins-Bold",
+          "fontSize": 22,
+        }
+      }
+    >
+      Paisanx
+    </Text>
+  </View>
+  <RNSVGSvgView
+    align="xMidYMid"
+    bbHeight="48"
+    bbWidth="48"
+    fill="none"
+    focusable={false}
+    height="48"
+    meetOrSlice={0}
+    minX={0}
+    minY={0}
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+          "borderWidth": 0,
+        },
+        {
+          "flex": 0,
+          "height": 48,
+          "width": 48,
+        },
+      ]
+    }
+    vbHeight={21}
+    vbWidth={59}
+    width="48"
+    xml="<svg width="59" height="21" viewBox="0 0 59 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M42.0008 12.1978V11.9897C42.0313 11.3742 42.2286 10.7779 42.5722 10.2621C43.1443 9.64259 43.5359 8.88339 43.7059 8.06418C43.7059 7.43103 43.7059 6.78883 43.7612 6.15567C44.047 3.1075 47.0609 1 50.038 1H50.1117C53.0888 1 56.1028 3.1075 56.3977 6.15567C56.453 6.78883 56.3977 7.43103 56.4438 8.06418C56.6162 8.88529 57.0074 9.64685 57.5775 10.2712C57.9237 10.7823 58.1213 11.3765 58.149 11.9897V12.1887C58.1695 13.0156 57.8847 13.822 57.3471 14.459C56.6366 15.2039 55.6725 15.6673 54.6373 15.7615C51.6016 16.0871 48.5389 16.0871 45.5032 15.7615C44.4692 15.6632 43.5065 15.2005 42.7934 14.459C42.2641 13.8215 41.9831 13.02 42.0008 12.1978Z" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M47.7522 18.9092C48.2265 19.5045 48.923 19.8898 49.6876 19.9798C50.4522 20.0698 51.2218 19.857 51.8261 19.3886C52.012 19.25 52.1792 19.0889 52.3238 18.9092" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.14342 18.2868C13.6409 18.2868 17.2868 14.6409 17.2868 10.1434C17.2868 5.64593 13.6409 2 9.14342 2C4.64593 2 1 5.64593 1 10.1434C1 14.6409 4.64593 18.2868 9.14342 18.2868Z" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.8073 16.2302L18 19.4146" stroke="#200E32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <RNSVGGroup
+      fill={null}
+      propList={
+        [
+          "fill",
+        ]
+      }
+    >
+      <RNSVGPath
+        clipRule={0}
+        d="M42.0008 12.1978V11.9897C42.0313 11.3742 42.2286 10.7779 42.5722 10.2621C43.1443 9.64259 43.5359 8.88339 43.7059 8.06418C43.7059 7.43103 43.7059 6.78883 43.7612 6.15567C44.047 3.1075 47.0609 1 50.038 1H50.1117C53.0888 1 56.1028 3.1075 56.3977 6.15567C56.453 6.78883 56.3977 7.43103 56.4438 8.06418C56.6162 8.88529 57.0074 9.64685 57.5775 10.2712C57.9237 10.7823 58.1213 11.3765 58.149 11.9897V12.1887C58.1695 13.0156 57.8847 13.822 57.3471 14.459C56.6366 15.2039 55.6725 15.6673 54.6373 15.7615C51.6016 16.0871 48.5389 16.0871 45.5032 15.7615C44.4692 15.6632 43.5065 15.2005 42.7934 14.459C42.2641 13.8215 41.9831 13.02 42.0008 12.1978Z"
+        fill={
+          {
+            "payload": 4278190080,
+            "type": 0,
+          }
+        }
+        fillRule={0}
+        propList={
+          [
+            "fillRule",
+            "stroke",
+            "strokeWidth",
+            "strokeLinecap",
+            "strokeLinejoin",
+          ]
+        }
+        stroke={
+          {
+            "payload": 4280290866,
+            "type": 0,
+          }
+        }
+        strokeLinecap={1}
+        strokeLinejoin={1}
+        strokeWidth="1.5"
+      />
+      <RNSVGPath
+        d="M47.7522 18.9092C48.2265 19.5045 48.923 19.8898 49.6876 19.9798C50.4522 20.0698 51.2218 19.857 51.8261 19.3886C52.012 19.25 52.1792 19.0889 52.3238 18.9092"
+        fill={
+          {
+            "payload": 4278190080,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "stroke",
+            "strokeWidth",
+            "strokeLinecap",
+            "strokeLinejoin",
+          ]
+        }
+        stroke={
+          {
+            "payload": 4280290866,
+            "type": 0,
+          }
+        }
+        strokeLinecap={1}
+        strokeLinejoin={1}
+        strokeWidth="1.5"
+      />
+      <RNSVGPath
+        clipRule={0}
+        d="M9.14342 18.2868C13.6409 18.2868 17.2868 14.6409 17.2868 10.1434C17.2868 5.64593 13.6409 2 9.14342 2C4.64593 2 1 5.64593 1 10.1434C1 14.6409 4.64593 18.2868 9.14342 18.2868Z"
+        fill={
+          {
+            "payload": 4278190080,
+            "type": 0,
+          }
+        }
+        fillRule={0}
+        propList={
+          [
+            "fillRule",
+            "stroke",
+            "strokeWidth",
+            "strokeLinecap",
+            "strokeLinejoin",
+          ]
+        }
+        stroke={
+          {
+            "payload": 4280290866,
+            "type": 0,
+          }
+        }
+        strokeLinecap={1}
+        strokeLinejoin={1}
+        strokeWidth="1.5"
+      />
+      <RNSVGPath
+        d="M14.8073 16.2302L18 19.4146"
+        fill={
+          {
+            "payload": 4278190080,
+            "type": 0,
+          }
+        }
+        propList={
+          [
+            "stroke",
+            "strokeWidth",
+            "strokeLinecap",
+            "strokeLinejoin",
+          ]
+        }
+        stroke={
+          {
+            "payload": 4280290866,
+            "type": 0,
+          }
+        }
+        strokeLinecap={1}
+        strokeLinejoin={1}
+        strokeWidth="1.5"
+      />
+    </RNSVGGroup>
+  </RNSVGSvgView>
+</View>
+`;

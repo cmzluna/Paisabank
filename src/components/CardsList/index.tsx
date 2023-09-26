@@ -14,7 +14,7 @@ import {
   PositionedText,
 } from "./styles";
 import { FlatList, type ViewToken } from "react-native";
-import type { Card, ParsedCard } from "../../types";
+import type { ParsedCard } from "../../types";
 import GradientChip from "../../../assets/gradient-chip.svg";
 import LoadingIndicator from "../LoadingIndicator";
 import { SvgXml } from "react-native-svg";
@@ -24,7 +24,7 @@ interface ItemProps {
 }
 
 interface CardsListProps {
-  data: ParsedCard[];
+  data?: ParsedCard[];
   isLoading: boolean;
 }
 
@@ -39,7 +39,7 @@ const CardsList = ({ data, isLoading }: CardsListProps): JSX.Element | null => {
         <ExtendedWrapper>
           <MediumText>Balance</MediumText>
 
-          <SvgXml width="48" height="48" xml={item.svgFile} />
+          <SvgXml width="48" height="48" xml={item.svgFile} testID="CardItemImage" />
         </ExtendedWrapper>
 
         <Wrapper>
@@ -67,7 +67,7 @@ const CardsList = ({ data, isLoading }: CardsListProps): JSX.Element | null => {
     );
   };
 
-  const renderItem = ({ item }: { item: Card }): JSX.Element => {
+  const renderItem = ({ item }: { item: ParsedCard }): JSX.Element => {
     return <Item item={item} />;
   };
 
@@ -88,6 +88,7 @@ const CardsList = ({ data, isLoading }: CardsListProps): JSX.Element | null => {
     itemVisiblePercentThreshold: 70,
   });
 
+  if (!data) return null;
   if (isLoading) return <LoadingIndicator />;
 
   // try with  viewAreaCoveragePercentThreshold: 50,
