@@ -13,6 +13,11 @@ import getUserTransactions from "../../services/getUserTransactions";
 import { setTransactions } from "../../store/slices/transactions";
 import getUserContacts from "../../services/getUserContacts";
 import { setContacts } from "../../store/slices/contacts";
+// ActionsTabs's icons:
+import WalletIcon from "assets/icons/wallet.svg";
+import TransferIcon from "assets/icons/transfer.svg";
+import PaymentIcon from "assets/icons/payment.svg";
+import RechargeIcon from "assets/icons/recharge.svg";
 
 export default function Home(): React.JSX.Element {
   const { isLoading: isLoadingCards, data: cardsData } = useCallApi({
@@ -25,6 +30,33 @@ export default function Home(): React.JSX.Element {
     dataCallback: mapTransactionsArray,
     dispatchCallback: setTransactions,
   });
+
+  const actionsTabButtonsData = [
+    {
+      id: 1,
+      title: "Billetera",
+      icon: WalletIcon,
+      backgroundColor: "#E4FFF0",
+    },
+    {
+      id: 2,
+      title: "Transferir",
+      icon: TransferIcon,
+      backgroundColor: "#FEEAD4",
+    },
+    {
+      id: 3,
+      title: "Pagar",
+      icon: PaymentIcon,
+      backgroundColor: "#EEE3FF",
+    },
+    {
+      id: 4,
+      title: "Recargar",
+      icon: RechargeIcon,
+      backgroundColor: "#CAF0FF",
+    },
+  ];
 
   return (
     <SafeAreaContainer>
@@ -39,7 +71,7 @@ export default function Home(): React.JSX.Element {
           ListHeaderComponent={
             <>
               <SectionTitle title={"Servicios"} contained />
-              <ActionsTabs />
+              <ActionsTabs data={actionsTabButtonsData} />
               <SectionTitle title={"Últimas transacciones"} contained />
             </>
           }
