@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import { Container, Input, SearchIconWrapper } from "./styles";
-import SearchIcon from "../../../assets/icons/search.svg";
+import SearchIcon from "assets/icons/search.svg";
 import { SvgXml } from "react-native-svg";
 
 interface InputSearchProps {
