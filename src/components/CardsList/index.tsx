@@ -42,7 +42,7 @@ const CardsList = ({ data, isLoading }: CardsListProps): JSX.Element | null => {
  useEffect(() => {
   Animated.spring(animation, {
     toValue: 1,         
-    tension: 3,      
+    tension: 1,      
     friction: 9,     
     useNativeDriver: true,
   }).start();
