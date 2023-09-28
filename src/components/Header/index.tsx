@@ -4,7 +4,7 @@ import { SvgXml } from "react-native-svg";
 
 const Header = ({ ...props }): JSX.Element | null => {
   return (
-    <Container>
+    <Container {...props}>
       <TitleWrapper>
         <Title>Hola</Title>
         <SubTitle>Paisanx</SubTitle>

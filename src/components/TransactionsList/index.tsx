@@ -8,7 +8,7 @@ import {
   LargeText,
 } from "./styles";
 import { FlatList } from "react-native";
-import type { ParsedTransaction } from "../../types";
+import type { ParsedTransaction } from "types";
 import { SvgXml } from "react-native-svg";
 import LoadingIndicator from "../LoadingIndicator";
 
@@ -30,7 +30,7 @@ const TransactionsList = ({
 
   const Item = ({ item }: ItemProps): JSX.Element => {
     return (
-      <ItemContainer>
+      <ItemContainer testID="transaction-info">
         <SvgXml xml={item.svgFile} />
 
         <ColumnWrapper>
@@ -47,6 +47,7 @@ const TransactionsList = ({
     return <Item item={item} />;
   };
 
+  if (!data) return null;
   if (isLoading) return <LoadingIndicator />;
 
   return (
