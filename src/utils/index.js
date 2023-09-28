@@ -77,7 +77,8 @@ export const mapTransactionsArray = (array) => {
         break;
     }
 
-    return { ...el, transactionTypeLabel, svgFile, color };
+    const amount = el.amount.split(',')[0];
+    return { ...el, transactionTypeLabel, svgFile, color , amount};
   });
 };
 

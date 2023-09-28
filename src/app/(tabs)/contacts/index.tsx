@@ -1,11 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
 import { Container, StyledInputSearch } from "./styles";
-import ContactsList from "../../../components/ContactsList";
-import { filterArrayByPersonalData, getItemsByCurrentMonth } from "../../../utils";
+import ContactsList from "components/ContactsList";
+import { filterArrayByPersonalData, getItemsByCurrentMonth } from "utils";
 import { useEffect, useState } from "react";
-import useCallApi from "../../../hooks/useCallApi";
-import getUserContacts from "../../../services/getUserContacts";
-import { setContacts } from "../../../store/slices/contacts";
+import useCallApi from "hooks/useCallApi";
+import getUserContacts from "services/getUserContacts";
+import { setContacts } from "store/slices/contacts";
 
 export default function Contacts(): React.JSX.Element {
   const [sectionsArray, setSectionsArray] = useState([]);

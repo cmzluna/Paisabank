@@ -9,10 +9,10 @@ import useCallApi from "hooks/useCallApi";
 import getUserCards from "services/getUserCards";
 import { mapCardsArray, mapTransactionsArray } from "../../utils";
 import { setCards } from "store/slices/cards";
-import getUserTransactions from "../../services/getUserTransactions";
-import { setTransactions } from "../../store/slices/transactions";
-import getUserContacts from "../../services/getUserContacts";
-import { setContacts } from "../../store/slices/contacts";
+import getUserTransactions from "services/getUserTransactions";
+import { setTransactions } from "store/slices/transactions";
+import getUserContacts from "services/getUserContacts";
+import { setContacts } from "store/slices/contacts";
 // ActionsTabs's icons:
 import WalletIcon from "assets/icons/wallet.svg";
 import TransferIcon from "assets/icons/transfer.svg";
