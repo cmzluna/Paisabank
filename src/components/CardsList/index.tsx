@@ -35,7 +35,7 @@ const CardsList = ({ data, isLoading }: CardsListProps): JSX.Element | null => {
  const isOnTop = focusedItemId === item.id;
 
  const animation = new Animated.Value(0);
- const inputRange = [0, 1];
+ const inputRange = [0, 1.1];
  const outputRange = [1, 0.9];
  const scale = animation.interpolate({inputRange, outputRange});
 
