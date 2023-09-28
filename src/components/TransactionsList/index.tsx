@@ -26,7 +26,6 @@ const TransactionsList = ({
   isLoading,
   ...props
 }: TransactionsListProps): JSX.Element | null => {
-  // const { transactions } = useSelector((state: RootState) => state.transactions);
 
   const Item = ({ item }: ItemProps): JSX.Element => {
     return (

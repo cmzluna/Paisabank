@@ -1,19 +1,25 @@
 import styled from "styled-components/native";
-import { getScale } from "../../utils";
-import BaseButton from "../../components/BaseButton";
-import { fontSize } from "../../theme/typography";
+import { getScale } from "utils";
+import BaseButton from "components/BaseButton";
+import { fontSize } from "theme/typography";
 import CheckBox from "react-native-check-box";
 
 const { horizontalScale, verticalScale } = getScale();
 
-const Container = styled.View`
-  display: flex;
+const StyledScrollView = styled.View`
+
   flex: 1;
+  background-color: #F9FAFC; 
+`;
+
+const Container = styled.View`
   height: ${verticalScale(626)}px;
   margin: ${horizontalScale(24)}px;
   margin-top: ${horizontalScale(124)}px;
   align-items: center;
   justify-content: center;
+  background-color: #F9FAFC;
+ 
 `;
 
 const TopWrapper = styled.View`
@@ -79,13 +85,16 @@ const InputText = styled(MainText)`
   font-weight: 500;
   margin-top: ${verticalScale(24)}px;
   margin-bottom: ${verticalScale(16)}px;
+ 
 `;
 
 const InputComponent = styled.TextInput`
   height: ${verticalScale(54)}px;
-  background-color: #eee;
+  background-color: #fff;
   justify-content: center;
-  padding: 10px;
+  padding: ${horizontalScale(10)}px;
+  padding-left: ${horizontalScale(16)}px;
+  border-radius: 12px;
 `;
 
 const Button = styled(BaseButton)`
@@ -97,7 +106,7 @@ const Button = styled(BaseButton)`
   border-radius: 16px;
   margin-top: ${verticalScale(30)}px;
 `;
-export {
+export {StyledScrollView,
   Container,
   Button,
   Title,

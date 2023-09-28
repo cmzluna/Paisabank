@@ -2,12 +2,12 @@
 import { Image, ScrollView } from "react-native";
 import { router } from "expo-router";
 import { useDispatch } from "react-redux";
-import { setUser } from "../../store/slices/user";
-import { signIn } from "../../store/slices/auth";
+import { setUser } from "store/slices/user";
+import { signIn } from "store/slices/auth";
 import { SvgXml } from "react-native-svg";
-import Logo from "../../../assets/logo.svg";
+import Logo from "assets/logo.svg";
 
-import {
+import {StyledScrollView,
   Container,
   TopWrapper,
   MiddleWrapper,
@@ -22,13 +22,13 @@ import {
   RowWrapper,
   CheckboxText,
 } from "./styles";
-import userLogin from "../../services/userLogin";
+import userLogin from "services/userLogin";
 import { useState } from "react";
 
 export default function Login(): React.JSX.Element {
   const dispatch = useDispatch();
-  const [userEmail, setUserEmail] = useState<string>("soypaisanx@paisanos.io");
-  const [userPassword, setUserPassword] = useState<string>("PAISANX2023!$");
+  const [userEmail, setUserEmail] = useState<string>("");
+  const [userPassword, setUserPassword] = useState<string>("");
   const [rememberMe, setRememberMe] = useState<boolean>(false);
 
   const handleLogin = async (): Promise<void> => {
@@ -36,8 +36,6 @@ export default function Login(): React.JSX.Element {
       email: userEmail,
       password: userPassword,
     });
-
-    if (result?.success) console.log("IN");
 
     dispatch(
       setUser({
@@ -53,11 +51,10 @@ export default function Login(): React.JSX.Element {
   };
 
   return (
-    <ScrollView automaticallyAdjustKeyboardInsets={true}>
+    <StyledScrollView automaticallyAdjustKeyboardInsets={true}  >
       <Container>
         <TopWrapper>
           <SvgXml width="48" height="48" xml={Logo} />
-          {/* <Logo width={48} height={48} /> */}
           <Title>PaisaBank</Title>
           <SubTitle>Comienza a manejar tu vida financiera</SubTitle>
         </TopWrapper>
@@ -68,12 +65,14 @@ export default function Login(): React.JSX.Element {
             placeholder="Ingresa tu email"
             onChangeText={setUserEmail}
             value={userEmail}
+            placeholderTextColor="#AAAAAA"
           />
           <InputText>Contraseña</InputText>
           <InputComponent
             placeholder="Ingresa tu contraseña"
             onChangeText={setUserPassword}
             value={userPassword}
+            placeholderTextColor="#AAAAAA"
           />
           <RowWrapper>
             <StyledCheckBox
@@ -100,6 +99,6 @@ export default function Login(): React.JSX.Element {
           </Button>
         </BottomWrapper>
       </Container>
-    </ScrollView>
+    </StyledScrollView>
   );
 }

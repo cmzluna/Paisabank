@@ -1,5 +1,5 @@
 import { Container, TitleWrapper, Title, SubTitle } from "./styles";
-import HeaderIcons from "../../../assets/icons/HeaderIcons.svg";
+import HeaderIcons from "assets/icons/HeaderIcons.svg";
 import { SvgXml } from "react-native-svg";
 
 const Header = ({ ...props }): JSX.Element | null => {

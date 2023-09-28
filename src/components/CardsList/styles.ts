@@ -8,6 +8,7 @@ const { horizontalScale, verticalScale } = getScale();
 
 const Container = styled.View`
   width: 100%;
+  display:flex;
   height: ${verticalScale(190)}px;
   margin-left: ${horizontalScale(24)}px;
 `;
@@ -17,10 +18,10 @@ interface WrapperProps {
 }
 const ItemContainer = styled.TouchableOpacity<WrapperProps>`
   padding: 20px;
+  height: ${({isOnTop}) => isOnTop ? verticalScale(190) : verticalScale(160)}px;
   width: ${horizontalScale(350)}px;
-  margin-right: ${horizontalScale(12)}px;
   border-radius: 14px;
-  background-color: ${(props) => props.backgroundColor};
+  background-color: ${({isOnTop}) => isOnTop ? '#005CEE' :'#F9B7B7' };
 `;
 
 const Wrapper = styled.View`

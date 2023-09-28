@@ -12,7 +12,7 @@ const Container = styled.View`
 
 const SafeAreaContainer = styled(SafeAreaView)`
   flex: 1;
-  background-color: #eee;
+  background-color: #F9FAFC;
 `;
 
 export { SafeAreaContainer, Container };

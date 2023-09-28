@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useRef, useEffect } from "react";
 import {
   Container,
   Wrapper,
@@ -13,9 +13,9 @@ import {
   XxlargeText,
   PositionedText,
 } from "./styles";
-import { FlatList, type ViewToken } from "react-native";
-import type { ParsedCard } from "../../types";
-import GradientChip from "../../../assets/gradient-chip.svg";
+import { FlatList, type ViewToken, Animated } from "react-native";
+import type { ParsedCard } from "types";
+import GradientChip from "assets/gradient-chip.svg";
 import LoadingIndicator from "../LoadingIndicator";
 import { SvgXml } from "react-native-svg";
 
@@ -29,13 +29,28 @@ interface CardsListProps {
 }
 
 const CardsList = ({ data, isLoading }: CardsListProps): JSX.Element | null => {
-  const [focusedItem, setFocusedItem] = useState<number | null>(null);
+  const [focusedItemId, setFocusedItemId] = useState<number | null>(null);
 
   const Item = ({ item }: ItemProps): JSX.Element => {
-    //  const isOnTop = focusedItem === item.id;
+ const isOnTop = focusedItemId === item.id;
 
+ const animation = new Animated.Value(0);
+ const inputRange = [0, 1];
+ const outputRange = [1, 0.9];
+ const scale = animation.interpolate({inputRange, outputRange});
+
+ useEffect(() => {
+  Animated.spring(animation, {
+    toValue: 1,         
+    tension: 3,      
+    friction: 9,     
+    useNativeDriver: true,
+  }).start();
+}, [ isOnTop]);
+ 
     return (
-      <ItemContainer backgroundColor={"#005CEE"}>
+      <Animated.View style={{transform: [{scale}]} }>
+      <ItemContainer isOnTop={isOnTop}  >
         <ExtendedWrapper>
           <MediumText>Balance</MediumText>
 
@@ -64,6 +79,7 @@ const CardsList = ({ data, isLoading }: CardsListProps): JSX.Element | null => {
           </ColumnWrapper>
         </ExtendedWrapper>
       </ItemContainer>
+      </Animated.View>
     );
   };
 
@@ -71,37 +87,36 @@ const CardsList = ({ data, isLoading }: CardsListProps): JSX.Element | null => {
     return <Item item={item} />;
   };
 
-  // https://blog.logrocket.com/implementing-component-visibility-sensor-react-native/#difference-between-viewableitems-changed
-
+ 
+ 
   const onViewableItemsChanged = useCallback(
-    (info: { viewableItems: ViewToken[]; changed: ViewToken[] }): void => {
-      const { changed } = info;
-      // console.log("Visible items are", viewableItems);
-      // console.log("Changed in this iteration", changed);
-
-      setFocusedItem(changed[0].index);
+    (info: { changed: ViewToken[] }): void => {
+      const visibleItems = info.changed.filter((entry) => entry.isViewable);
+      visibleItems.forEach((visible) => {
+        setFocusedItemId(visible.item.id)
+      });
     },
-    [],
+    []
   );
 
   const viewConfigRef = React.useRef({
     itemVisiblePercentThreshold: 70,
+    minimumViewTime: 10,
   });
 
   if (!data) return null;
   if (isLoading) return <LoadingIndicator />;
-
-  // try with  viewAreaCoveragePercentThreshold: 50,
+ 
   return (
     <Container>
       <FlatList
         horizontal
         data={data}
         renderItem={renderItem}
-        // onViewableItemsChanged={onViewableItemsChanged}
-        // viewabilityConfig={viewConfigRef.current}
-
-        //  keyExtractor={(item) => item.id}
+        contentContainerStyle = {{alignItems:'center',  }}
+        onViewableItemsChanged={onViewableItemsChanged}
+        viewabilityConfig={viewConfigRef.current}
+         keyExtractor={(item) => item.id}
       />
     </Container>
   );
